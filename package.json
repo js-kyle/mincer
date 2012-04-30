@@ -17,7 +17,7 @@
                         "test": "make test"
                       },
   "dependencies"    : {
-                        "hike":       "git://github.com/nodeca/mincer.git",
+                        "hike":       "git://github.com/nodeca/hike-js.git",
                         "types":      "git://github.com/nodeca/types.git",
                         "fs-tools":   "git://github.com/nodeca/fs-tools.git",
                         "mimoza":     "git://github.com/ixti/mimoza.git",
