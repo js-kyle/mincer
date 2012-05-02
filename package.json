@@ -19,7 +19,7 @@
   "dependencies"    : {
                         "hike":       "git://github.com/nodeca/hike-js.git",
                         "types":      "git://github.com/nodeca/types.git",
-                        "mimoza":     "git://github.com/ixti/mimoza.git",
+                        "mimoza":     "git://github.com/nodeca/mimoza.git",
                         "async":      "0.1.15",
                         "mkdirp":     "0.3.2",
                         "winston":    "0.5.11",
