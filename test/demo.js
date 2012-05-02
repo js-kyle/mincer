@@ -10,7 +10,10 @@ env.appendPath('app/assets/stylesheets');
 env.appendPath('vendor/assets/stylesheets');
 
 
-env.findAsset('app.css').compile(function (err, asset) {
-  console.log('\n### Error of app.css:\n' + err);
-  console.log('\n### Contents of app.css:\n' + asset.source);
+var manifest = new (mincer.Manifest)(env, __dirname + '/assets');
+
+
+manifest.compile(['app.css', 'app.js'], function (err, manifest) {
+  console.log(err);
+  console.log(manifest);
 });
