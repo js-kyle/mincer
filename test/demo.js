@@ -7,7 +7,7 @@ var env = new (mincer.Environment)(__dirname + '/fixtures');
 
 env.appendPath('app/assets/javascripts');
 env.appendPath('app/assets/stylesheets');
-env.appendPath('app/vendor/stylesheets');
+env.appendPath('vendor/assets/stylesheets');
 
 
 env.findAsset('app.css').compile(function (err, asset) {
