@@ -1,4 +1,5 @@
 /**
  *= require less-vendor.css.less
+ *= require stylus-vendor.styl
  */
 .container { width: 90%; }
