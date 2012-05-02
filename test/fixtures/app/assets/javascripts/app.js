@@ -1,2 +1,3 @@
-//= require foobar
-alert(123);
+//= require foobar.js
+//= require test.js.coffee
+alert(123)

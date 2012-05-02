@@ -1,1 +1,1 @@
-window.foobar = true;
+window.foobar = true
