@@ -10,7 +10,7 @@ env.appendPath('app/assets/stylesheets');
 env.appendPath('app/vendor/stylesheets');
 
 
-env.findAsset('app.css').getSource(function (err, data) {
+env.findAsset('app.css').compile(function (err, asset) {
   console.log('\n### Error of app.css:\n' + err);
-  console.log('\n### Contents of app.css:\n' + data);
+  console.log('\n### Contents of app.css:\n' + asset.source);
 });
