@@ -14,6 +14,10 @@ var manifest = new (mincer.Manifest)(env, __dirname + '/assets');
 
 
 manifest.compile(['app.css', 'app.js'], function (err, manifest) {
-  console.log(err);
-  console.log(manifest);
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  console.log(require('util').inspect(manifest));
 });
