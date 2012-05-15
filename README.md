@@ -359,6 +359,7 @@ sources.
 # License
 
 Copyright (c) 2012 [Vitaly Puzrin](https://github.com/puzrin)
+
 Released under the MIT license. See [LICENSE][license] for details.
 
 [license]:  https://raw.github.com/nodeca/mincer/master/LICENSE
