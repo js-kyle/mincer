@@ -56,10 +56,12 @@ To add a directory to your environment's load path, use the `appendPath` and
 `prependPath` methods. Directories at the beginning of the load path have
 precedence over subsequent directories.
 
-    environment = new Mincer.Environment();
-    environment.appendPath('app/assets/javascripts');
-    environment.appendPath('lib/assets/javascripts');
-    environment.appendPath('vendor/assets/jquery');
+``` javascript
+environment = new Mincer.Environment();
+environment.appendPath('app/assets/javascripts');
+environment.appendPath('lib/assets/javascripts');
+environment.appendPath('vendor/assets/jquery');
+```
 
 In general, you should append to the path by default and reserve
 prepending for cases where you need to override existing assets.
@@ -107,18 +109,20 @@ your environment at `/assets` and request the URL `/assets/application.js`,
 Sprockets will search your load path for the file named `application.js`
 and serve it.
 
-    var connect = require('connect');
-    var Mincer  = require('mincer');
+``` javascript
+var connect = require('connect');
+var Mincer  = require('mincer');
 
-    var environment = new Mincer.Environment();
-    environment.appendPath('app/assets/javascripts');
-    environment.appendPath('app/assets/stylesheets');
+var environment = new Mincer.Environment();
+environment.appendPath('app/assets/javascripts');
+environment.appendPath('app/assets/stylesheets');
 
-    var app = connect();
-    app.use('/assets', Mincer.createServer(environment));
-    app.use(function (req, res) {
-      // your application here...
-    });
+var app = connect();
+app.use('/assets', Mincer.createServer(environment));
+app.use(function (req, res) {
+  // your application here...
+});
+```
 
 
 ### Accessing Assets Programmatically
@@ -132,13 +136,15 @@ Call `toString` on the resulting asset to access its contents, `length` to
 get its length in bytes, `mtime` to query its last-modified time, and
 `pathname` to get its full path on the filesystem.
 
-    var asset = environment.findAsset('application.js');
-    asset.compile(function (err, asset) {
-      asset.toString(); // resulting contents
-      asset.length;     // length in bytes
-      asset.mtime;      // last modified time
-      asset.pathname;   // full path on the filesystem
-    });
+``` javascript
+var asset = environment.findAsset('application.js');
+asset.compile(function (err, asset) {
+  asset.toString(); // resulting contents
+  asset.length;     // length in bytes
+  asset.mtime;      // last modified time
+  asset.pathname;   // full path on the filesystem
+});
+```
 
 
 # Using Engines
