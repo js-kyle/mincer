@@ -1,8 +1,8 @@
 {
   "name"            : "mincer",
-  "version"         : "0.0.0",
+  "version"         : "0.1.0",
   "description"     : "Web assets processor inspired by Sprockets.",
-  "keywords"        : ["sprockets", "assets", "minify", "uglify", "bundle", "less.js", "stylus"],
+  "keywords"        : ["sprockets", "assets", "minify", "uglify", "bundle", "less", "stylus"],
   "homepage"        : "https://github.com/nodeca/mincer",
 
   "author"          : "Aleksey V Zapparov <ixti@member.fsf.org> (http://ixti.net/)",
