@@ -8,7 +8,7 @@ to write assets in the languages like CoffeeScript, LESS, Stylus.
 See [Sprockets][1] and [Mincer API Documentation][2] for more details.
 
 [1]: https://github.com/sstephenson/sprockets
-[2]: http://nodeca.github.com/mincer/#Mincer
+[2]: http://nodeca.github.com/mincer/
 
 
 # Installation
@@ -176,6 +176,7 @@ asset.compile(function (err, asset) {
   asset = environment.findAsset('application.js');
   asset.digestPath; // correct digest again, unless application.js was changed
 });
+```
 
 
 # Using Engines
