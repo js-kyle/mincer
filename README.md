@@ -22,6 +22,26 @@ Or install bleeding edge version from GitHub repo:
     $ npm install git://github.com/nodeca/mincer.git
 
 
+# Using Mincer from CLI
+
+To use Mincer from CLI, you will need to intall it globally:
+
+    $ npm install mincer -g
+
+Usage is really simple (see `mincer -h` for details):
+
+    $ mincer --include assets/javascripts \
+             --include assets/stylesheets \
+             --output public/assets \
+             application.js application.css
+
+If you are using mincer CLI often, you would probably want to "preset" some of
+the options/arguments for your project. Just create `.mincerrc` file and put
+argument you want in it. For example:
+
+    --include assets/javascripts --include assets/stylesheets --output public/assets
+
+
 # Understanding the Mincer Environment
 
 You'll need an instance of the `Mincer.Environment` class to
@@ -354,24 +374,6 @@ asset's cache in response to a change in another file.
 The *path* must be a valid asset and may or may not already be part
 of the bundle. Once stubbed, it is blacklisted and can't be brought
 back by any other `require`.
-
-
-# Development
-
-
-## Contributing
-
-The Mincer source code is [hosted on GitHub][repo]. You can check out a
-copy of the latest code using Git:
-
-    $ git clone https://github.com/nodeca/mincer.git
-
-If you've found a bug or have a question, please open an issue on the
-[Mincer issue tracker][issues]. Or, clone the Mincer repository, fix the bug and
-submit a pull request.
-
-[repo]:   https://github.com/nodeca/mincer
-[issues]: https://github.com/nodeca/mincer/issues
 
 
 # Credits
