@@ -5,7 +5,7 @@
 var fs      = require('fs');
 var connect = require('connect');
 var jade    = require('jade');
-var mincer  = require('..');
+var Mincer  = require('..');
 
 
 // Create connect application
@@ -13,7 +13,7 @@ var app = connect();
 
 
 // Prepare Mincer.Environment
-var env = new mincer.Environment(__dirname);
+var env = new Mincer.Environment(__dirname);
 
 
 // fill in some paths
@@ -51,19 +51,25 @@ if ('production' === process.env.NODE_ENV) {
   };
 
   // Index is a special "static" version of Environment ideal for production
-  app.use('/assets/', mincer.createServer(env.index));
+  app.use('/assets/', Mincer.createServer(env.index));
 } else {
   // In development we want Mincer to rebuild assets when they are modified
-  app.use('/assets/', mincer.createServer(env));
+  app.use('/assets/', Mincer.createServer(env));
 }
+
+
+// Use console for logging
+Mincer.logger.use(console);
 
 
 // Prepare HTML layout
 var view = jade.compile(fs.readFileSync(__dirname + '/views/layout.jade', 'utf8'));
 
 
+// define some dummy application
 app.use(function (req, res) {
   var data = view({
+    // dummy `asset_path` helper
     asset_path: function (pathname) {
       return '/assets/' + env.findAsset(pathname).logicalPath;
     }
@@ -72,4 +78,7 @@ app.use(function (req, res) {
   res.end(data);
 });
 
+
+// start listening
 app.listen(3000);
+console.log('Listening on localhost:3000');
