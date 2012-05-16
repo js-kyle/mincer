@@ -1,5 +1,5 @@
-Mincer: Sprockets inspired assets processor
-===========================================
+Mincer: JavaScript port of Sprockets - web assets processor
+===========================================================
 
 It features same declarative dependency management as Sprockets (with exactly
 same language) for CSS and JavaScript and preprocessor pipeline that allows you
