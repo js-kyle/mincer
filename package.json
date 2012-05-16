@@ -13,7 +13,7 @@
 
   "main"            : "./index.js",
 
-  "bin"             : { "ndoc": "bin/mincer.js" },
+  "bin"             : { "mincer": "bin/mincer.js" },
   "scripts"         : { "test": "make test" },
   "dependencies"    : {
                         "hike"        : "0.1.0",
