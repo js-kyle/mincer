@@ -137,14 +137,45 @@ get its length in bytes, `mtime` to query its last-modified time, and
 `pathname` to get its full path on the filesystem.
 
 ``` javascript
-var asset = environment.findAsset('application.js');
-asset.compile(function (err, asset) {
+environment.findAsset('application.js').compile(function (err, asset) {
   asset.toString(); // resulting contents
   asset.length;     // length in bytes
   asset.mtime;      // last modified time
   asset.pathname;   // full path on the filesystem
 });
 ```
+
+
+#### NOTICE
+
+In comparison to Sprockets, where assets is being compiled (rendered) the same
+time (in a synchronous fashion) it is initiated. In comparison we have
+compilation "delayed", that leads into the situation that real file digest is
+available for us ONLY after file was really compiled. Here's simple example
+of `asset_path` helper:
+
+``` javascript
+function asset_path(pathname) {
+  var asset = environment.findAsset(pathname);
+  return asset ? asset.digestPath : '';
+}
+```
+
+The helper above works perfectly with static assets (those who have no
+processors assigned, e.g. images, fonts, etc.), but it will return you wrong
+digest path for `application.js` unless you compile it first:
+
+``` javascript
+var asset = environment.findAsset('application.js');
+
+asset.digestPath; // uses initial digest (calculated against original source)
+
+asset.compile(function (err, asset) {
+  asset.digestPath; // correct digest path
+
+  asset = environment.findAsset('application.js');
+  asset.digestPath; // correct digest again, unless application.js was changed
+});
 
 
 # Using Engines
