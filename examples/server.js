@@ -1,84 +1,89 @@
 'use strict';
 
 
-// require some modules
+//
+// Require some modules
+//
+
+
 var fs      = require('fs');
-var connect = require('connect');
 var jade    = require('jade');
+var connect = require('connect');
 var Mincer  = require('..');
 
 
+//
+// Get Mincer environment
+//
+
+
+var environment = require('./environment');
+
+
+//
 // Create connect application
+//
+
+
 var app = connect();
 
 
-// Prepare Mincer.Environment
-var env = new Mincer.Environment(__dirname);
-
-
-// fill in some paths
-env.appendPath('assets/javascripts');
-env.appendPath('assets/stylesheets');
-env.appendPath('vendor/jquery');
-env.appendPath('vendor/bootstrap/js');
-env.appendPath('vendor/bootstrap/less');
+//
+// Attach assets server
+//
 
 
 if ('production' === process.env.NODE_ENV) {
-  var UglifyJS    = require('uglify-js');
-  var Csso        = require('csso');
-
-  // In production we would like assets to be compressed
-  env.jsCompressor = function (data, callback) {
-    try {
-      var ast = UglifyJS.parser.parse(data);
-
-      ast = UglifyJS.uglify.ast_mangle(ast);
-      ast = UglifyJS.uglify.ast_squeeze(ast);
-
-      callback(null, UglifyJS.uglify.gen_code(ast));
-    } catch (err) {
-      callback(err);
-    }
-  };
-
-  env.cssCompressor = function (data, callback) {
-    try {
-      callback(null, Csso.justDoIt(data));
-    } catch (err) {
-      callback(err);
-    }
-  };
-
-  // Index is a special "static" version of Environment ideal for production
-  app.use('/assets/', Mincer.createServer(env.index));
-} else {
-  // In development we want Mincer to rebuild assets when they are modified
-  app.use('/assets/', Mincer.createServer(env));
+  // In production we assume that assets are not changed between requests,
+  // so we use cached version of environment. See API docs for details.
+  environment = environment.index;
 }
 
 
-// Use console for logging
-Mincer.logger.use(console);
+app.use('/assets/', Mincer.createServer(environment));
 
 
-// Prepare HTML layout
-var view = jade.compile(fs.readFileSync(__dirname + '/views/layout.jade', 'utf8'));
+//
+// Prepare HTML layout for our dummy application
+//
 
 
-// define some dummy application
+var view;
+
+try {
+  view = fs.readFileSync(__dirname + '/views/layout.jade', 'utf8');
+  view = jade.compile(view);
+} catch (err) {
+  console.error("Failed compile view: " + (err.message || err.toString()));
+  process.exit(128);
+}
+
+
+//
+// Attach some dummy handler, that simply renders layout
+//
+
+
 app.use(function (req, res) {
-  var data = view({
+  res.end(view({
     // dummy `asset_path` helper
     asset_path: function (pathname) {
-      return '/assets/' + env.findAsset(pathname).logicalPath;
+      return '/assets/' + environment.findAsset(pathname).digestPath;
     }
-  });
-
-  res.end(data);
+  }));
 });
 
 
-// start listening
-app.listen(3000);
-console.log('Listening on localhost:3000');
+//
+// Start listening
+//
+
+
+app.listen(3000, function (err) {
+  if (err) {
+    console.error("Failed start server: " + (err.message || err.toString()));
+    process.exit(128);
+  }
+
+  console.info('Listening on localhost:3000');
+});
