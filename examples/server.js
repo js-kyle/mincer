@@ -64,13 +64,28 @@ try {
 //
 
 
-app.use(function (req, res) {
-  res.end(view({
-    // dummy `asset_path` helper
-    asset_path: function (pathname) {
-      return '/assets/' + environment.findAsset(pathname).digestPath;
+app.use(function (req, res, next) {
+  // make sure our assets were compiled, so their `digestPath`
+  // will be 100% correct, otherwise first request will produce
+  // wrong digestPath. That's not a big deal, as assets will be
+  // served anyway, but to keep everything correct, we use this
+  // precompilation, which is similar to using manifest, but
+  // without writing files on disk.
+  //
+  // See [[Base#precompile]] for details,
+  environment.precompile(['app.js', 'app.css'], function (err) {
+    if (err) {
+      next(err);
+      return;
     }
-  }));
+
+    res.end(view({
+      // dummy `asset_path` helper
+      asset_path: function (pathname) {
+        return '/assets/' + environment.findAsset(pathname).digestPath;
+      }
+    }));
+  });
 });
 
 
