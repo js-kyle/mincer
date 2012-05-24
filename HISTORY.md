@@ -4,6 +4,7 @@
 * Improved examples.
 * Added `Environment#precompile()` for making sure assets are "fresh" and
   compiled without using Manifest - for development purposes.
+* Improved error reporting of jsCompressor/cssCompressor
 
 0.1.1 / 2012-05-17
 ------------------
