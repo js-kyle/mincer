@@ -41,32 +41,30 @@ environment.appendPath('vendor/bootstrap/less');
 
 
 //
-// Set JS and CSS compressors (for production)
+// Set JS and CSS compressors
 //
 
 
-if ('production' === process.env.NODE_ENV) {
-  environment.jsCompressor = function (data, callback) {
-    try {
-      var ast = UglifyJS.parser.parse(data);
+environment.jsCompressor = function (data, callback) {
+  try {
+    var ast = UglifyJS.parser.parse(data);
 
-      ast = UglifyJS.uglify.ast_mangle(ast);
-      ast = UglifyJS.uglify.ast_squeeze(ast);
+    ast = UglifyJS.uglify.ast_mangle(ast);
+    ast = UglifyJS.uglify.ast_squeeze(ast);
 
-      callback(null, UglifyJS.uglify.gen_code(ast));
-    } catch (err) {
-      callback(err);
-    }
-  };
+    callback(null, UglifyJS.uglify.gen_code(ast));
+  } catch (err) {
+    callback(err);
+  }
+};
 
-  environment.cssCompressor = function (data, callback) {
-    try {
-      callback(null, Csso.justDoIt(data));
-    } catch (err) {
-      callback(err);
-    }
-  };
-}
+environment.cssCompressor = function (data, callback) {
+  try {
+    callback(null, Csso.justDoIt(data));
+  } catch (err) {
+    callback(err);
+  }
+};
 
 
 //
