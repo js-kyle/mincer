@@ -1,4 +1,4 @@
-0.1.2 / In progress
+0.1.2 / 2012-05-25
 -------------------
 
 * Improved examples.
