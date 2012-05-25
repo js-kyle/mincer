@@ -2,6 +2,7 @@
 -------------------------
 
 * Fix `If-None-Match` header test
+* Add test of `If-Modified-Since` header for assets server
 
 0.1.2 / 2012-05-25
 ------------------
