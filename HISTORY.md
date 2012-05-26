@@ -1,8 +1,9 @@
 0.1.3 / In development...
 -------------------------
 
-* Fix `If-None-Match` header test
+* Fix `If-None-Match` header test (304 reply)
 * Add test of `If-Modified-Since` header for assets server
+* Added more headers to 304 reply
 
 0.1.2 / 2012-05-25
 ------------------
