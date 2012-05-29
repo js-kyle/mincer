@@ -4,4 +4,5 @@
 //= require test-inner
 //= require image
 //= require_tree ./my-tree
+//= require boo
 alert(123)

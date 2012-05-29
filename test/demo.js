@@ -21,7 +21,7 @@ var manifest = new (mincer.Manifest)(env, __dirname + '/assets');
 
 manifest.compile(['app.css', 'app.js', 'header.jpg', 'README.md'], function (err, manifest) {
   if (err) {
-    console.error(err);
+    console.error(err.stack);
     return;
   }
 
