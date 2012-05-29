@@ -1,6 +1,11 @@
 0.1.3 / In development...
 -------------------------
 
+* Do not compress small assets. See #8.
+
+0.1.3 / 2012-05-26
+------------------
+
 * Fix `If-None-Match` header test (304 reply)
 * Add test of `If-Modified-Since` header for assets server
 * Added more headers to 304 reply
