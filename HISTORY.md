@@ -4,6 +4,7 @@
 * Do not compress small assets. See #8.
 * Fix DirectiveProcessor `require_self` and some other command handlers `this`
   scope. Fixes #9.
+* Drop support of `If-Modified-Since` header check - using only ETags.
 
 0.1.3 / 2012-05-26
 ------------------
