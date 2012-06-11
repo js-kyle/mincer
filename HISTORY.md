@@ -1,10 +1,12 @@
-0.1.4 / In development...
--------------------------
+0.1.4 / 2012-06-11
+------------------
 
-* Do not compress small assets. See #8.
+* Do not compress small assets (less than 500KB). See #8.
 * Fix DirectiveProcessor `require_self` and some other command handlers `this`
   scope. Fixes #9.
 * Drop support of `If-Modified-Since` header check - using only ETags.
+* Add Asset#isCompiled flag.
+* Small fixes and code improvements.
 
 0.1.3 / 2012-05-26
 ------------------
