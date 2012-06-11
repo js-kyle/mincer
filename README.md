@@ -126,7 +126,7 @@ virtual filesystem whose entries are logical paths.
 When you mount an environment, all of its assets are accessible as
 logical paths underneath the *mount point*. For example, if you mount
 your environment at `/assets` and request the URL `/assets/application.js`,
-Sprockets will search your load path for the file named `application.js`
+Mincer will search your load path for the file named `application.js`
 and serve it.
 
 ``` javascript
@@ -244,7 +244,7 @@ Use the extension `.css.coffee`.
 
 ## Invoking JavaScript with EJS
 
-Sprockets provides an EJS engine for preprocessing assets using
+Mincer provides an EJS engine for preprocessing assets using
 embedded JavaScript code. Append `.ejs` to a CSS or JavaScript asset's
 filename to enable the EJS engine.
 
@@ -266,6 +266,33 @@ JavaScript code embedded in an asset is evaluated in the context of a
 - embedding other application resources, such as a localized string
   database, in a JavaScript asset via JSON
 - embedding version constants loaded from another file
+
+
+## Using helpers
+
+Mincer provides an easy way to add your own helpers for engines:
+
+``` javascript
+environment.registerHelper('version', function () {
+  require(__dirname, '/package.json').version;
+});
+```
+
+Now, you can call that helper with EJS like this:
+
+``` javascript
+var APP = window.APP = {version: '<%= version() %>'};
+```
+
+**NOTICE** Helpers currently work for EJS and Stylus only. So to use them with
+Less you will need to add EJS engine as well:
+
+``` css
+// file: foobar.less.ejs
+.btn {
+  background: url('<%= asset_path('bg.png') %>');
+}
+```
 
 
 # Managing and Bundling Dependencies
@@ -298,7 +325,7 @@ contain spaces, similar to commands in the Unix shell.
 
 **Note**: Non-directive comment lines will be preserved in the final
   asset, but directive comments are stripped after
-  processing. Sprockets will not look for directives in comment blocks
+  processing. Mincer will not look for directives in comment blocks
   that occur after the first line of code.
 
 
