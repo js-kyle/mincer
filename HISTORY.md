@@ -1,3 +1,11 @@
+0.1.5 / In development
+----------------------
+
+* Fix typo in Base#findAsset() fo Manifest.
+* Fix Asset#digestPath getter. Now it does not drops `path` component.
+* Fix extension aliases registrtion. Now `app.css` will match:
+  `app.css`, `app.styl`, `app.less`, `app.css.styl`, etc.
+
 0.1.4 / 2012-06-11
 ------------------
 
