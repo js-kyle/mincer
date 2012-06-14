@@ -45,7 +45,7 @@ environment.appendPath('vendor/bootstrap/less');
 //
 
 
-environment.jsCompressor = function (data, callback) {
+environment.jsCompressor = function (context, data, callback) {
   try {
     var ast = UglifyJS.parser.parse(data);
 
@@ -58,7 +58,7 @@ environment.jsCompressor = function (data, callback) {
   }
 };
 
-environment.cssCompressor = function (data, callback) {
+environment.cssCompressor = function (context, data, callback) {
   try {
     callback(null, Csso.justDoIt(data));
   } catch (err) {
