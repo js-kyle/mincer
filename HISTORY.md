@@ -1,10 +1,13 @@
-0.1.5 / In development
-----------------------
+0.2.0 / 2012-06-19
+------------------
 
 * Fix typo in Base#findAsset() fo Manifest.
 * Fix Asset#digestPath getter. Now it does not drops `path` component.
-* Fix extension aliases registrtion. Now `app.css` will match:
+* Fix extension aliases registration. Now `app.css` will match:
   `app.css`, `app.styl`, `app.less`, `app.css.styl`, etc.
+* Improve js/css compressors, now these functions accept `context` along with
+  `data` of asset.
+* Fixed RegExp generation for `Base#eachLogicalPath` calls.
 
 0.1.4 / 2012-06-11
 ------------------
