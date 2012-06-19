@@ -1,6 +1,6 @@
 {
   "name"            : "mincer",
-  "version"         : "0.1.4",
+  "version"         : "0.2.0",
   "description"     : "Web assets processor. Native JavaScript port of Sprockets.",
   "keywords"        : ["sprockets", "assets", "minify", "uglify", "bundle", "less", "stylus"],
   "homepage"        : "https://github.com/nodeca/mincer",
