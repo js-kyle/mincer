@@ -49,7 +49,7 @@ doc:
 		exit 128 ; \
 		fi
 	rm -rf ./doc
-	ndoc --output ./doc --linkFormat "${SRC_URL_FMT}" ./lib
+	ndoc --output ./doc --link-format "${SRC_URL_FMT}" ./lib
 
 
 dev-deps:
