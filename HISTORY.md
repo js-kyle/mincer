@@ -1,5 +1,5 @@
-0.2.2 / In progress...
-----------------------
+0.2.2 / 2012-06-26
+------------------
 
 * Update Node API for 0.8 compatibility with shims for Node 0.6.
 
