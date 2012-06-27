@@ -57,7 +57,7 @@ cli.addArgument(['filenames'], {
 if (-1 === process.argv.indexOf('--noenv')) {
   if (path.existsSync('./.mincerrc')) {
     var rcflags = shellwords(fs.readFileSync('./.mincerrc', 'utf8'));
-    process.argv = process.argv.concat(rcflags);
+    [].splice.apply(process.argv, [2, 0].concat(rcflags));
   }
 }
 
