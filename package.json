@@ -16,13 +16,13 @@
   "bin"             : { "mincer": "bin/mincer.js" },
   "scripts"         : { "test": "make test" },
   "dependencies"    : {
-                        "hike"        : "0.1.0",
-                        "types"       : "0.1.0",
-                        "mimoza"      : "0.1.0",
-                        "argparse"    : "0.1.2",
-                        "fs-tools"    : "0.2.1",
-                        "async"       : "0.1.22",
-                        "underscore"  : "1.3.3"
+                        "hike"        : "~ 0.1.0",
+                        "types"       : "~ 0.1.0",
+                        "mimoza"      : "~ 0.1.0",
+                        "argparse"    : "~ 0.1.3",
+                        "fs-tools"    : "~ 0.2.2",
+                        "async"       : "~ 0.1.22",
+                        "underscore"  : "~ 1.3.3"
                       },
   "devDependencies" : { "mocha": "~> 1.2.0" },
   "engines"         : { "node": ">= 0.6.0" }
