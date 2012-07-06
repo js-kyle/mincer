@@ -1,3 +1,8 @@
+0.2.3 / 2012-07-06
+------------------
+
+* Allow specify options of the CoffeeScript engine. Closes #11.
+
 0.2.2 / 2012-06-26
 ------------------
 
