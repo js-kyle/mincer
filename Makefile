@@ -49,7 +49,9 @@ doc:
 		exit 128 ; \
 		fi
 	rm -rf ./doc
-	ndoc --output ./doc --link-format "${SRC_URL_FMT}" ./lib
+	ndoc lib \
+		--link-format "{package.homepage}/blob/${CURR_HEAD}/{file}#L{line}" \
+		--show-all
 
 
 dev-deps:
