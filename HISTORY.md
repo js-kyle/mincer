@@ -3,15 +3,18 @@
 
 * Allow specify options of the CoffeeScript engine. Closes #11.
 
+
 0.2.2 / 2012-06-26
 ------------------
 
 * Update Node API for 0.8 compatibility with shims for Node 0.6.
 
+
 0.2.1 / 2012-06-25
 ------------------
 
 * Update dependencies to be node v0.8 compatible.
+
 
 0.2.0 / 2012-06-19
 ------------------
@@ -24,6 +27,7 @@
   `data` of asset.
 * Fixed RegExp generation for `Base#eachLogicalPath` calls.
 
+
 0.1.4 / 2012-06-11
 ------------------
 
@@ -34,12 +38,14 @@
 * Add Asset#isCompiled flag.
 * Small fixes and code improvements.
 
+
 0.1.3 / 2012-05-26
 ------------------
 
 * Fix `If-None-Match` header test (304 reply)
 * Add test of `If-Modified-Since` header for assets server
 * Added more headers to 304 reply
+
 
 0.1.2 / 2012-05-25
 ------------------
@@ -50,10 +56,12 @@
 * Improved error reporting of jsCompressor/cssCompressor.
 * Fix timer's output.
 
+
 0.1.1 / 2012-05-17
 ------------------
 
 * Added CLI script `mincer` to build assets.
+
 
 0.1.0 / 2012-05-15
 ------------------
