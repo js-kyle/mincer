@@ -1,4 +1,4 @@
 documentor:   ndoc
 paths:        [ lib ]
-link_format:  "{package.homepage}/blob/{head}/{file}#L{line}"
+link_format:  "{package.homepage}/blob/{ref}/{file}#L{line}"
 show_all:     true
