@@ -29,7 +29,7 @@ function write(file, text) {
 ////////////////////////////////////////////////////////////////////////////////
 
 
-var env     = new (mincer.Environment);
+var env = new (mincer.Environment)(__dirname);
 
 
 // append assets path
