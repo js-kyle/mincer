@@ -2,22 +2,34 @@
 
 
 // stdlib
-var fs = require('fs');
+var fs    = require('fs');
+var path  = require('path');
 
 
 // mincer
 var mincer  = require('../..');
-var env     = new (mincer.Environment);
 
 
 ////////////////////////////////////////////////////////////////////////////////
+
+
+var ASSETS_ROOT = path.join(__dirname, 'assets');
 
 
 function report(message, test) {
   console.log('[' + (test ? ' OK ' : 'FAIL') + '] ' + message);
 }
 
+
+function write(file, text) {
+  fs.writeFileSync(path.join(ASSETS_ROOT, file), text);
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////
+
+
+var env     = new (mincer.Environment);
 
 
 // append assets path
@@ -25,28 +37,26 @@ env.appendPath('assets');
 
 
 // create assets dir if needed
-if (!fs.existsSync('assets')) {
-  fs.mkdirSync('assets');
+if (!fs.existsSync(ASSETS_ROOT)) {
+  fs.mkdirSync(ASSETS_ROOT);
 }
 
 
 // write dummy asset
-fs.writeFileSync('assets/foo.js', '/*' + Date.now() + '*/\n//= require bar');
-fs.writeFileSync('assets/bar.js', '/*' + Date.now() + '*/');
+write('foo.js', '/*' + Date.now() + '*/\n//= require bar');
+write('bar.js', '/*' + Date.now() + '*/');
 
 
 env.findAsset('foo').compile(function () {
   report('foo should be fresh', env.findAsset('foo').isFresh());
 
-  setTimeout(function () {
-    fs.writeFileSync('assets/bar.js', '/*' + Date.now() + '*/');
+  write('bar.js', '/*' + Date.now() + '*/');
+  report('foo should be stale', !env.findAsset('foo').isFresh());
+
+  env.findAsset('foo').compile(function () {
+    report('foo should be fresh', env.findAsset('foo').isFresh());
+
+    write('foo.js', '/*' + Date.now() + '*/\n//= require bar');
     report('foo should be stale', !env.findAsset('foo').isFresh());
-
-    env.findAsset('foo').compile(function () {
-      report('foo should be fresh', env.findAsset('foo').isFresh());
-
-      fs.writeFileSync('assets/foo.js', '/*' + Date.now() + '*/\n//= require bar');
-      report('foo should be stale', !env.findAsset('foo').isFresh());
-    });
-  }, 1500);
+  });
 });
