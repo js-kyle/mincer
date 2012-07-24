@@ -2,6 +2,7 @@
 ------------------
 
 * Allow specify options of the CoffeeScript engine. Closes #11.
+* Fix assets fresh/stale checks. Closes #13.
 
 
 0.2.2 / 2012-06-26
