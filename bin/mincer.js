@@ -9,12 +9,12 @@ var path  = require('path');
 
 
 // 3rd-party
-var ArgumentParser = require('argparse').ArgumentParser;
+var ArgumentParser  = require('argparse').ArgumentParser;
+var shellwords      = require('shellwords').split;
 
 
 // internal
 var Mincer      = require('..');
-var shellwords  = require('../lib/mincer/common').shellwords;
 
 
 ////////////////////////////////////////////////////////////////////////////////
