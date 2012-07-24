@@ -1,3 +1,19 @@
+################################################################################
+#                                                                              #
+# You can preset arguments of `mincer` executable in `.mincerrc` file.         #
+# You may specify any argument you need. Arguments specified in the            #
+# command line take precedence.                                                #
+#                                                                              #
+# Lines starting with `#` are comments and got ignored.                        #
+#                                                                              #
+# Executing `mincer app.js` within directory with this file equals to:         #
+#                                                                              #
+#   mincer -I assets/javascripts -I assets/stylesheets \                       #
+#          -I vendor/bootstrap/js -I vendor/bootstrap/less \                   #
+#          -I vendor/jquery app.js                                             #
+#                                                                              #
+################################################################################
+
 -I assets/javascripts
 -I assets/stylesheets
 -I vendor/bootstrap/js
