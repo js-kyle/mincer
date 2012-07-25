@@ -1,3 +1,10 @@
+0.2.5 / 2012-07-25
+------------------
+
+* Use `process.hrtime()` for timer when available.
+* Allow using custom `Server` logging by providing `#log()` method.
+
+
 0.2.4 / 2012-07-25
 ------------------
 
