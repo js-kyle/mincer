@@ -19,9 +19,9 @@ env.appendPath('vendor/assets/javascripts');
 var manifest = new (mincer.Manifest)(env, __dirname + '/assets');
 
 
-manifest.compile(['app.css', 'app.js', 'header.jpg', 'README.md'], function (err, manifest) {
+manifest.compile(['app.css', 'app.js', 'issue-16.js', 'header.jpg', 'README.md'], function (err, manifest) {
   if (err) {
-    console.error(err.stack);
+    console.error(err.stack || err.message || err);
     return;
   }
 

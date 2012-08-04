@@ -1,0 +1,6 @@
+#left.span7
+  #results
+    .apps
+    #empty
+    .info
+    %ul
