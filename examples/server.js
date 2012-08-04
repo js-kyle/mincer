@@ -29,6 +29,14 @@ var app = connect();
 
 
 //
+// Fix NODE_ENV environment variable
+//
+
+
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+
+//
 // Attach assets server
 //
 
@@ -60,6 +68,70 @@ try {
 
 
 //
+// Define some view helpers
+//
+
+
+var helpers = {};
+
+
+// returns a list of asset paths
+function find_asset_paths(logicalPath) {
+  var asset = environment.findAsset(logicalPath),
+      paths = [];
+
+  if (!asset) {
+    return null;
+  }
+
+  if ('development' === process.env.NODE_ENV && asset.isCompiled) {
+    asset.toArray().forEach(function (dep) {
+      paths.push('/assets/' + dep.logicalPath + '?body=1');
+    });
+  } else {
+    paths.push('/assets/' + asset.digestPath);
+  }
+
+  return paths;
+}
+
+
+helpers.javascript = function javascript(logicalPath) {
+  var paths = find_asset_paths(logicalPath);
+
+  if (!paths) {
+    // this will help us notify that given logicalPath is not found
+    // without "breaking" view renderer
+    return '<script type="application/javascript">alert("Javascript file ' +
+           JSON.stringify(logicalPath).replace(/"/g, '\\"') +
+           ' not found.")</script>';
+  }
+
+  return paths.map(function (path) {
+    return '<script type="application/javascript" src="' + path + '"></script>';
+  }).join('\n');
+};
+
+
+helpers.stylesheet = function stylesheet(logicalPath) {
+  var paths = find_asset_paths(logicalPath);
+
+  if (!paths) {
+    // this will help us notify that given logicalPath is not found
+    // without "breaking" view renderer
+    return '<script type="application/javascript">alert("Stylesheet file ' +
+           JSON.stringify(logicalPath).replace(/"/g, '\\"') +
+           ' not found.")</script>';
+  }
+
+  return paths.map(function (path) {
+    return '<link rel="stylesheet" type="text/css" href="' + path + '" />';
+  }).join('\n');
+};
+
+
+
+//
 // Attach some dummy handler, that simply renders layout
 //
 
@@ -79,12 +151,7 @@ app.use(function (req, res, next) {
       return;
     }
 
-    res.end(view({
-      // dummy `asset_path` helper
-      asset_path: function (pathname) {
-        return '/assets/' + environment.findAsset(pathname).digestPath;
-      }
-    }));
+    res.end(view(helpers));
   });
 });
 

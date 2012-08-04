@@ -2,7 +2,8 @@
 html(lang='en')
   head
     title Mincer demo
-    link(rel="stylesheet",type="text/css",href=asset_path('app.css'))
+    !=stylesheet('app.css')
+
   body
     .container
       h1 Mincer demo
@@ -12,4 +13,5 @@ html(lang='en')
           h3 Modal header
         .modal-body
           p Hello, world!
-    script(src=asset_path('app.js'))
+
+    !=javascript('app.js')
