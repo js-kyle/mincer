@@ -1,3 +1,9 @@
+0.2.6 / In development
+----------------------
+
+* Allow request non-bundled assets (without dependencies). Closes #15.
+
+
 0.2.5 / 2012-07-25
 ------------------
 
