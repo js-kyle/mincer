@@ -8,7 +8,7 @@ Examples of Mincer usage.
 
 You will need install some additional modules in order to run these examples:
 
-    npm install connect less uglify-js csso jade
+    npm install connect less ejs uglify-js csso jade
 
 
 Assets middleware server demo

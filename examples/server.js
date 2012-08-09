@@ -53,6 +53,7 @@ app.use('/assets/', Mincer.createServer(environment));
 
 //
 // Prepare HTML layout for our dummy application
+// See `views/layout.jade` for example of `javascript` and `stylesheet` usage.
 //
 
 
@@ -72,7 +73,7 @@ try {
 //
 
 
-var helpers = {};
+var viewHelpers = {};
 
 
 // returns a list of asset paths
@@ -96,7 +97,7 @@ function find_asset_paths(logicalPath) {
 }
 
 
-helpers.javascript = function javascript(logicalPath) {
+viewHelpers.javascript = function javascript(logicalPath) {
   var paths = find_asset_paths(logicalPath);
 
   if (!paths) {
@@ -113,7 +114,7 @@ helpers.javascript = function javascript(logicalPath) {
 };
 
 
-helpers.stylesheet = function stylesheet(logicalPath) {
+viewHelpers.stylesheet = function stylesheet(logicalPath) {
   var paths = find_asset_paths(logicalPath);
 
   if (!paths) {
@@ -151,7 +152,7 @@ app.use(function (req, res, next) {
       return;
     }
 
-    res.end(view(helpers));
+    res.end(view(viewHelpers));
   });
 });
 

@@ -25,7 +25,7 @@ var environment = require('./environment');
 var manifest = new Mincer.Manifest(environment, __dirname + '/public/assets');
 
 
-manifest.compile(['app.js', 'app.css'], function (err, assetsData) {
+manifest.compile(['app.js', 'app.css', 'stripes.png'], function (err, assetsData) {
   if (err) {
     console.error("Failed compile assets: " + (err.message || err.toString()));
     process.exit(128);

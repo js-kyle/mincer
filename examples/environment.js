@@ -35,9 +35,27 @@ var environment = module.exports = new Mincer.Environment(__dirname);
 
 environment.appendPath('assets/javascripts');
 environment.appendPath('assets/stylesheets');
+environment.appendPath('assets/images');
 environment.appendPath('vendor/jquery');
 environment.appendPath('vendor/bootstrap/js');
 environment.appendPath('vendor/bootstrap/less');
+
+
+//
+// Define environment helper that will be available in the processed assets
+// See `assets/stylesheets/app.css.ejs` for example of `asset_path` usage.
+//
+
+
+environment.registerHelper('asset_path', function (logicalPath) {
+  var asset = environment.findAsset(logicalPath);
+
+  if (!asset) {
+    throw new Error("File " + logicalPath + " not found");
+  }
+
+  return '/assets/' + asset.digestPath;
+});
 
 
 //
