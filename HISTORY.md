@@ -1,5 +1,5 @@
-0.2.6 / In development
-----------------------
+0.2.6 / 2012-08-09
+------------------
 
 * Allow request non-bundled assets (without dependencies). Closes #15.
 * Fix problem with CoffeScript options got mangled by compiler. Closes #17.
