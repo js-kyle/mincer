@@ -1,3 +1,9 @@
+0.2.7 / 2012-08-10
+------------------
+
+* Forced UTF-8 charset for text assets, to avoid problems with JS loaders
+
+
 0.2.6 / 2012-08-09
 ------------------
 
