@@ -1,6 +1,6 @@
 #left.span7
   #results
-    .apps
+    .apps= "Apps of #{ @name }"
     #empty
     .info
     %ul

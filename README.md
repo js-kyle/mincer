@@ -244,6 +244,35 @@ CoffeeScript to write JavaScript assets in Mincer.
 Use the extension `.css.coffee`.
 
 
+## JavaScript Templating with Haml Coffee
+
+Mincer supports JavaScript templates for client-side rendering of strings or
+markup. JavaScript templates have the special format extension `.jst` and are
+compiled to JavaScript functions.
+
+When loaded, a JavaScript template function can be accessed by its logical path
+as a property on the global `JST` object. Invoke a template function to render
+the template as a string. The resulting string can then be inserted into the DOM.
+
+``` haml
+// templates/hello.jst.hamlc
+%div= Hello, %span= #{ @name }!
+```
+
+``` javascript
+// application.js
+//= require templates/hello
+$("#hello").html(JST["templates/hello"]({ name: "Sam" }));
+```
+
+Mincer currently supports only one template language: [Haml Coffee][hamlc].
+If `coffee-script` and `haml-coffee` are available to your application, you can
+use _Haml Cofee_ templates in Mincer. Haml Coffee templates have the extension
+`.jst.hamlc`.
+
+[hamlc]: https://github.com/netzpirat/haml-coffee
+
+
 ## Invoking JavaScript with EJS
 
 Mincer provides an EJS engine for preprocessing assets using
