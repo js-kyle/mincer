@@ -265,12 +265,20 @@ the template as a string. The resulting string can then be inserted into the DOM
 $("#hello").html(JST["templates/hello"]({ name: "Sam" }));
 ```
 
-Mincer currently supports only one template language: [Haml Coffee][hamlc].
+Mincer supports two template languages: [Haml Coffee][hamlc] and [Jade][jade].
+
 If `coffee-script` and `haml-coffee` are available to your application, you can
 use _Haml Cofee_ templates in Mincer. Haml Coffee templates have the extension
 `.jst.hamlc`.
 
-[hamlc]: https://github.com/netzpirat/haml-coffee
+If `jade` Node module is available to your application, you can use _Jade_
+templates in Mincer. Jade templates have the extension `.jst.jade`. To use
+compiled templates you will need to require Jade [runtime][jade-runtime] before
+calling renderer functions.
+
+[hamlc]:         https://github.com/netzpirat/haml-coffee
+[jade]:          https://github.com/visionmedia/jade
+[jade-runtime]:  https://github.com/visionmedia/jade/blob/master/runtime.js
 
 
 ## Invoking JavaScript with EJS
