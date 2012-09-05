@@ -6,3 +6,7 @@ npm-debug.log
 
 tmp/
 doc/
+
+mincer.sublime-project
+
+mincer.sublime-workspace

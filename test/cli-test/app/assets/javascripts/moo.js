@@ -1,0 +1,1 @@
+window.moo = 321;
