@@ -11,7 +11,7 @@ var path  = require('path');
 // 3rd-party
 var ArgumentParser  = require('argparse').ArgumentParser;
 var shellwords      = require('shellwords').split;
-
+var watch = require('watch');
 
 // internal
 var Mincer      = require('..');
@@ -29,6 +29,11 @@ var cli = new ArgumentParser({
 
 cli.addArgument(['--noenv'], {
   help:         'Disables .mincerrc file',
+  action:       'storeTrue'
+});
+
+cli.addArgument(['-w','--watch'], {
+  help:         'Enables watch mode on load paths',
   action:       'storeTrue'
 });
 
@@ -50,9 +55,7 @@ cli.addArgument(['filenames'], {
   nargs:        '+'
 });
 
-
 ////////////////////////////////////////////////////////////////////////////////
-
 
 if (-1 === process.argv.indexOf('--noenv')) {
   if (fs.existsSync('.mincerrc')) {
@@ -66,21 +69,47 @@ var args        = cli.parseArgs();
 var environment = new Mincer.Environment(process.cwd());
 var filenames   = [];
 
-
 (process.env.MINCER_PATH || '').split(':').forEach(function (path) {
   if (path) {
     environment.appendPath(path);
   }
 });
 
+if(args.watch) {
+  process.on("uncaughtException", function (err) {
+    console.error('Compile ' + err)
+  });
+}
+
 args.include.forEach(function (path) {
   environment.appendPath(path);
+
+  if(args.watch) {
+    watch.createMonitor(
+      path,
+      {
+        ignoreDotFiles:true,
+        filter:function(f,stat) {
+          //console.log(stat);
+        }
+      },
+      function (monitor) {
+        monitor.on("created", function (f, stat) {
+          compileManifest();
+        })
+        monitor.on("changed", function (f, curr, prev) {
+          compileManifest();
+        })
+        monitor.on("removed", function (f, stat) {
+          compileManifest();
+        })
+    });
+  }
 });
 
 args.filenames.forEach(function (file) {
   filenames.push(path.normalize(file));
 });
-
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -88,47 +117,56 @@ args.filenames.forEach(function (file) {
 //
 // Configure Mincer logger
 //
-
-
 Mincer.logger.use(console);
 
+if (1 === filenames.length) {
+  var compileAsset = function(file) {
+    var asset = environment.findAsset(file);
 
-//
-// Compiling manifest with bunch of files
-//
-
-
-if (args.output) {
-  var manifest = new Mincer.Manifest(environment, args.output);
-  manifest.compile(filenames, function (err) {
-    if (err) {
-      console.error(err);
+    if (!asset) {
+      console.error("Cannot find logical path: " + file);
       process.exit(1);
     }
-  });
-  return;
-}
 
+    asset.compile(function (err) {
+      if (err) {
+        console.error(err);
+        process.exit(1);
+      }
 
-if (1 === filenames.length) {
-  var asset = environment.findAsset(filenames[0]);
-
-  if (!asset) {
-    console.error("Cannot find logical path: " + filenames[0]);
-    process.exit(1);
+      process.stdout.write(asset.toString());
+    });
+    return;
   }
 
-  asset.compile(function (err) {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-
-    process.stdout.write(asset.toString());
-  });
-  return;
+  compileAsset(filenames[0]);
 }
 
+if (args.output) {
+  var compileManifest = function() {
+    var manifest = new Mincer.Manifest(environment, args.output);
+  
+    //
+    // Compiling manifest with bunch of files
+    //
+    //console.log(filenames);
+    manifest.compile(filenames, function (err) {
+      if (err) {
+        console.error(err);
+        if(!args.watch) {
+          process.exit(1);
+        }
+      }
+    });
 
-console.error("Only one file can be compiled to stdout at a time");
-process.exit(1);
+    manifest = null;
+    return;
+  }
+
+  compileManifest();
+}
+
+if(!args.watch) {
+   console.error("Only one file can be compiled to stdout at a time");
+   process.exit(1);
+}
