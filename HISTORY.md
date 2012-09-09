@@ -3,6 +3,7 @@
 
 * Add JST support. Haml Coffee became JST backend.
 * Add Jade JST bacend.
+* Fix directive processor to work on M$ Windows.
 
 
 0.2.7 / 2012-08-10
