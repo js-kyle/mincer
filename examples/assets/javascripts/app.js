@@ -1,8 +1,9 @@
 //= require jquery
 //= require bootstrap-modal
+//= require_tree ./templates
 
 $(function () {
-  var $dialog = $( $('#modal-tpl').text() );
+  var $dialog = $( JST['templates/foobar']() );
   $('h1').click(function () {
     $dialog.modal();
   });

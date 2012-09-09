@@ -1,0 +1,5 @@
+.modal
+  .modal-header
+    %h3 Modal header
+  .modal-body
+    %p Hello, world!
