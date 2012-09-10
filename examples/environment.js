@@ -59,30 +59,43 @@ environment.registerHelper('asset_path', function (logicalPath) {
 
 
 //
-// Set JS and CSS compressors
+// Prepare production-ready environment
 //
 
 
-environment.jsCompressor = function (context, data, callback) {
-  try {
-    var ast = UglifyJS.parser.parse(data);
+if ('production' === process.env.NODE_ENV) {
+  //
+  // In production we assume that assets are not changed between requests,
+  // so we use cached version of environment. See API docs for details.
+  //
 
-    ast = UglifyJS.uglify.ast_mangle(ast);
-    ast = UglifyJS.uglify.ast_squeeze(ast);
+  environment = environment.index;
 
-    callback(null, UglifyJS.uglify.gen_code(ast));
-  } catch (err) {
-    callback(err);
-  }
-};
+  //
+  // Enable JS and CSS compression
+  //
 
-environment.cssCompressor = function (context, data, callback) {
-  try {
-    callback(null, Csso.justDoIt(data));
-  } catch (err) {
-    callback(err);
-  }
-};
+  environment.jsCompressor = function (context, data, callback) {
+    try {
+      var ast = UglifyJS.parser.parse(data);
+
+      ast = UglifyJS.uglify.ast_mangle(ast);
+      ast = UglifyJS.uglify.ast_squeeze(ast);
+
+      callback(null, UglifyJS.uglify.gen_code(ast));
+    } catch (err) {
+      callback(err);
+    }
+  };
+
+  environment.cssCompressor = function (context, data, callback) {
+    try {
+      callback(null, Csso.justDoIt(data));
+    } catch (err) {
+      callback(err);
+    }
+  };
+}
 
 
 //

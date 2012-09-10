@@ -29,23 +29,8 @@ var app = connect();
 
 
 //
-// Fix NODE_ENV environment variable
-//
-
-
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
-
-//
 // Attach assets server
 //
-
-
-if ('production' === process.env.NODE_ENV) {
-  // In production we assume that assets are not changed between requests,
-  // so we use cached version of environment. See API docs for details.
-  environment = environment.index;
-}
 
 
 app.use('/assets/', Mincer.createServer(environment));
@@ -85,7 +70,7 @@ function find_asset_paths(logicalPath) {
     return null;
   }
 
-  if ('development' === process.env.NODE_ENV && asset.isCompiled) {
+  if ('production' !== process.env.NODE_ENV && asset.isCompiled) {
     asset.toArray().forEach(function (dep) {
       paths.push('/assets/' + dep.logicalPath + '?body=1');
     });
