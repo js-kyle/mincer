@@ -1,9 +1,13 @@
 0.3.0 / In development
 ----------------------
 
-* Add JST support. Haml Coffee became JST backend.
-* Add Jade JST bacend.
-* Fix directive processor to work on M$ Windows.
+* Add JST support. Haml Coffee became JST backend. Closes #7.
+* Add Jade JST backend.
+* Fix directive processor to work on M$ Windows. Closes #30.
+* Fix example server compression usage. Closes #32.
+* Fix call-stack overflow on massive requires. Closes #31.
+* Monitor stylus `@import` and auto-depend-on them. Closes #23.
+* Fix error reporting to show file that cause error. Closes 26.
 
 
 0.2.7 / 2012-08-10
