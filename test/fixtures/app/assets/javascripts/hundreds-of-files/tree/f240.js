@@ -1,0 +1,1 @@
+window.foo240 = true

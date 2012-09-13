@@ -1,0 +1,1 @@
+window.foo95 = true

@@ -1,0 +1,1 @@
+window.foo18 = true

@@ -1,0 +1,1 @@
+window.foo88 = true
