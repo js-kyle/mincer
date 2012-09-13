@@ -1,5 +1,5 @@
-0.3.0 / In development
-----------------------
+0.3.0 / 2012-09-13
+------------------
 
 * Add JST support. Haml Coffee became JST backend. Closes #7.
 * Add Jade JST backend.
