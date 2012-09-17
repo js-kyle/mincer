@@ -7,6 +7,7 @@
 
 
 var fs      = require('fs');
+var path    = require('path');
 var jade    = require('jade');
 var connect = require('connect');
 var Mincer  = require('..');
@@ -61,8 +62,15 @@ try {
 var viewHelpers = {};
 
 
+// dummy helper that injects extension
+function rewrite_extension(source, ext) {
+  var source_ext = path.extname(source);
+  return (source_ext === ext) ? source : (source + ext);
+}
+
+
 // returns a list of asset paths
-function find_asset_paths(logicalPath) {
+function find_asset_paths(logicalPath, ext) {
   var asset = environment.findAsset(logicalPath),
       paths = [];
 
@@ -72,10 +80,10 @@ function find_asset_paths(logicalPath) {
 
   if ('production' !== process.env.NODE_ENV && asset.isCompiled) {
     asset.toArray().forEach(function (dep) {
-      paths.push('/assets/' + dep.logicalPath + '?body=1');
+      paths.push('/assets/' + rewrite_extension(dep.logicalPath) + '?body=1');
     });
   } else {
-    paths.push('/assets/' + asset.digestPath);
+    paths.push('/assets/' + rewrite_extension(asset.digestPath));
   }
 
   return paths;
@@ -83,7 +91,7 @@ function find_asset_paths(logicalPath) {
 
 
 viewHelpers.javascript = function javascript(logicalPath) {
-  var paths = find_asset_paths(logicalPath);
+  var paths = find_asset_paths(logicalPath, '.js');
 
   if (!paths) {
     // this will help us notify that given logicalPath is not found
@@ -100,7 +108,7 @@ viewHelpers.javascript = function javascript(logicalPath) {
 
 
 viewHelpers.stylesheet = function stylesheet(logicalPath) {
-  var paths = find_asset_paths(logicalPath);
+  var paths = find_asset_paths(logicalPath, '.css');
 
   if (!paths) {
     // this will help us notify that given logicalPath is not found
