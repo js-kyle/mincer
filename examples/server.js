@@ -80,10 +80,10 @@ function find_asset_paths(logicalPath, ext) {
 
   if ('production' !== process.env.NODE_ENV && asset.isCompiled) {
     asset.toArray().forEach(function (dep) {
-      paths.push('/assets/' + rewrite_extension(dep.logicalPath) + '?body=1');
+      paths.push('/assets/' + rewrite_extension(dep.logicalPath, ext) + '?body=1');
     });
   } else {
-    paths.push('/assets/' + rewrite_extension(asset.digestPath));
+    paths.push('/assets/' + rewrite_extension(asset.digestPath, ext));
   }
 
   return paths;
