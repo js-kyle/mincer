@@ -1,3 +1,11 @@
+0.3.1 / WIP
+-----------
+
+* Improve and fix typos in usage examples. Closes #35.
+* Improve work with extension-less requires.
+* Sync with Sprockets up to v2.4.5
+
+
 0.3.0 / 2012-09-13
 ------------------
 
