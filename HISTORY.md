@@ -1,5 +1,5 @@
-0.3.1 / WIP
------------
+0.3.1 / 2012-10-13
+------------------
 
 * Improve and fix typos in usage examples. Closes #35.
 * Improve work with extension-less requires.
