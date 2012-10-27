@@ -1,3 +1,11 @@
+0.4.0 / WIP
+-----------
+
+* Added bower component.json require support
+* Provide stubbed implementation of context `*_path` helpers
+* Sync with Sprockets up to v2.6.0
+
+
 0.3.1 / 2012-10-13
 ------------------
 
