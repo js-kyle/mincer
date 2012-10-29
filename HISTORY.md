@@ -1,5 +1,5 @@
-0.4.0 / WIP
------------
+0.4.0 / 2012-10-30
+------------------
 
 * Added bower component.json require support
 * Provide stubbed implementation of context `*_path` helpers
