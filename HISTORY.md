@@ -1,5 +1,5 @@
-0.4.1 / WIP
------------
+0.4.1 / 2012-11-06
+------------------
 
 * Fix extensionless assets path resolving
 
