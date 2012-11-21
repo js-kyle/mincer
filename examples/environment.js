@@ -42,16 +42,16 @@ environment.appendPath('vendor/bootstrap/less');
 
 
 //
-// Define environment helper that will be available in the processed assets
-// See `assets/stylesheets/app.css.ejs` for example of `asset_path` usage.
+// Define environment essential *_path helper that will be available in the
+// processed assets. See `assets/stylesheets/app.css.ejs` for example.
 //
 
 
-environment.registerHelper('asset_path', function (logicalPath) {
-  var asset = environment.findAsset(logicalPath);
+environment.ContextClass.defineAssetPath(function (pathname, options) {
+  var asset = this.environment.findAsset(pathname, options);
 
   if (!asset) {
-    throw new Error("File " + logicalPath + " not found");
+    throw new Error("File " + pathname + " not found");
   }
 
   return '/assets/' + asset.digestPath;
