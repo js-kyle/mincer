@@ -233,6 +233,15 @@ If the `less` Node module is available to your application, you can use LESS
 to write CSS assets in Mincer. Use the extension `.css.less`.
 
 
+## Styling with SASS
+
+[SASS](http://sass-lang.com/) is an extension of CSS3, adding nested rules, 
+variables, mixins, selector inheritance, and more.
+
+If the `node-sass` Node module is available to your application, you can use SASS
+to write CSS assets in Mincer. Use the extension `.css.sass` or `.css.scss`.
+
+
 ## Scripting with CoffeeScript
 
 [CoffeeScript](http://jashkenas.github.com/coffee-script/) is a
