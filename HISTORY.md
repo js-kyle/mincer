@@ -1,3 +1,9 @@
+0.4.2 / coming....
+------------------
+
+* Added SASS support (thanks to @moddular)
+
+
 0.4.1 / 2012-11-06
 ------------------
 
