@@ -251,7 +251,7 @@ binding.
 
 If the `coffee-script` Node module is available to your application, you can use
 CoffeeScript to write JavaScript assets in Mincer.
-Use the extension `.css.coffee`.
+Use the extension `.js.coffee`.
 
 
 ## JavaScript Templating with Haml Coffee
