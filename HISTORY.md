@@ -1,7 +1,7 @@
 0.4.3 / 2013-01-02
 ------------------
 
-* Fix LESS engine imports processor (compatibility with less < 1.3.2 and 1.3.2+)
+* Fix for LESS > v1.3.2 (improved paths calculation)
 
 
 0.4.2 / 2013-01-02
