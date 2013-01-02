@@ -1,7 +1,8 @@
-0.4.2 / coming....
+0.4.2 / 2013-01-02
 ------------------
 
 * Added SASS support (thanks to @moddular)
+* Fixed Paths#clearPaths helper.
 
 
 0.4.1 / 2012-11-06
