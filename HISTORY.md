@@ -3,7 +3,7 @@
 
 * Added SASS support (thanks to @moddular)
 * Fixed Paths#clearPaths helper.
-* Simplify `asset_path` (and dependent built-in helpers) hepers registration.
+* Simplify `asset_path` (and dependent built-in) hepers registration.
 
 
 0.4.1 / 2012-11-06
