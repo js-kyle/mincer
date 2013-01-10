@@ -27,7 +27,7 @@ Or install bleeding edge version from GitHub repo:
 
 # Using Mincer from CLI
 
-To use Mincer from CLI, you will need to intall it globally:
+To use Mincer from CLI, you will need to install it globally:
 
     $ npm install mincer -g
 
