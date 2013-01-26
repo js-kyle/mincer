@@ -1,3 +1,10 @@
+0.4.4 / 2013-01-26
+------------------
+
+* Expose original HTTP request object inside Server log event.
+* Provide filename for EJS engine (thanks to @CamShaft)
+
+
 0.4.3 / 2013-01-02
 ------------------
 
