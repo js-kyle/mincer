@@ -1,0 +1,1 @@
+window.figure = '<%= asset_data_uri "header.jpg" %>'
