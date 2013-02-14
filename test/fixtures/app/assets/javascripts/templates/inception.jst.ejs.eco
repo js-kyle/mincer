@@ -1,0 +1,1 @@
+<%= "window.inception" %> = <%%= 2+2 %> + <%%= "this.inception" %>;

@@ -1,0 +1,6 @@
+<% @a = 1 %>
+<% @a += 10 while @a < 50 %>
+.main_div {
+	width: <%= "#{@a} %" %>;
+	background: <%= @asset_data_uri('header.jpg') %>;
+}
