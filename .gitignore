@@ -6,3 +6,8 @@ npm-debug.log
 
 tmp/
 doc/
+
+Cakefile
+Cakefile.js
+*.compiled
+**/*.compiled

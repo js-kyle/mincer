@@ -4,7 +4,7 @@
 var assert = require('assert'),
     path   = require('path'),
     fs     = require('fs'),
-    ECO    = require('eco'),
+    EJS    = require('ejs'),
     Mincer = require('../lib/mincer');
 
 Mincer.logger.use(console); // provide logger backend
@@ -24,11 +24,11 @@ function remove_trailing_spaces(str) {
 
 describe('Environment', function () {
   describe('#findAsset()', function () {
-    it('should find assets with .eco extension', function (done) {
+    it('should find assets with .ejs extension', function (done) {
       assert.doesNotThrow(function () {
-        var assetName = 'variable-eco'; /* js.eco */
+        var assetName = 'variable-ejs'; /* js.ejs */
         assert.equal(path.resolve(__dirname + '/fixtures/app/assets/javascripts/' +
-          assetName + '.js.eco'),
+          assetName + '.js.ejs'),
           env.findAsset(assetName).pathname);
         done();
       });
@@ -39,14 +39,18 @@ describe('Environment', function () {
 describe('Asset', function () {
   describe('#compile()', function () {
     it('should compile properly', function (done) {
-      var assetName = 'variable-eco', /* js.eco */
+      var assetName = 'variable-ejs', /* js.ejs */
           myStrip = remove_trailing_spaces;
       assert.doesNotThrow(function () {
         var asset  = env.findAsset(assetName),
-            source = fs.readFileSync(asset.pathname, 'utf8').trim();
+            source = fs.readFileSync(asset.pathname, 'utf8').trim(),
+            options = { scope: {},
+                        locals: {},
+                        filename: asset.pathname,
+                        client: true };
         asset.compile(function (err, asset) {
           if (err) { throw err; }
-          assert.equal(myStrip(ECO.compile(source).call({}).toString()),
+          assert.equal(myStrip(EJS.compile(source, options).call(options.scope).toString()),
                        myStrip(asset.toString()));
           done();
         });
@@ -55,10 +59,11 @@ describe('Asset', function () {
   });
 
   describe('#compile() with JST', function () {
-    var assetName = 'templates/figure-eco', /* jst.eco */
+    var assetName = 'templates/figure-ejs', /* jst.ejs */
         compiledAsset,
         callable,
-        scope = {};
+        scope = {},
+        locals = {};
     var context = {
       id: 1,
       text: 'Caption',
@@ -72,7 +77,7 @@ describe('Asset', function () {
           if (err) { throw err; }
           compiledAsset = asset;
           callable = new Function(asset.toString());
-          callable.call(scope);
+          callable.call(scope, locals);
           done();
         });
       });
@@ -98,9 +103,14 @@ describe('Asset', function () {
     });
 
     it('should generate a template function that renders correctly', function (done) {
-      var source = fs.readFileSync(compiledAsset.pathname, 'utf8').trim();
-      assert.equal(ECO.render(source, context),
-                   scope.JST[assetName](context));
+      var source = fs.readFileSync(compiledAsset.pathname, 'utf8').trim(),
+          options = { scope: context,
+                      locals: locals,
+                      filename: compiledAsset.pathname,
+                      client: true };
+
+      assert.equal(EJS.render(source, options),
+                   scope.JST[assetName].call(context, locals));
       done();
     });
   });
