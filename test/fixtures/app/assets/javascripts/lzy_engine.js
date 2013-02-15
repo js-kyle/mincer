@@ -1,3 +1,5 @@
+'use strict';
+
 var path     = require('path'),
   Template = require(path.resolve(__dirname +
       '../../../../../../lib/mincer/template'));
