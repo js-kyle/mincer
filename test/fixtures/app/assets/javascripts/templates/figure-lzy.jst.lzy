@@ -1,0 +1,5 @@
+{{id}}
+<header id='header{{id}}'>
+	<p>{{text}}</p>
+	<img src='[[asset_data_uri("header.jpg")]]' title='beautiful header' />
+</header>
