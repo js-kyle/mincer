@@ -2,6 +2,8 @@
 -----------
 
 * Added ECO engine (thanks to @abravalheri).
+* Fix absolute path recognition (thanks to @abravalheri).
+* Fix logicalPath issue (thanks to @abravalheri).
 
 
 0.4.4 / 2013-01-26
