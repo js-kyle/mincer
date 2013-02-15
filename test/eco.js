@@ -38,15 +38,27 @@ describe('Environment', function () {
 
 describe('Asset', function () {
   describe('#compile()', function () {
-    it('should compile properly', function (done) {
-      var assetName = 'variable-eco', /* js.eco */
-          myStrip = remove_trailing_spaces;
+    var asset,
+        source,
+        assetName = 'variable-eco',
+        myStrip = remove_trailing_spaces;
+
+    before(function (done) {
       assert.doesNotThrow(function () {
-        var asset  = env.findAsset(assetName),
-            source = fs.readFileSync(asset.pathname, 'utf8').trim();
+        asset  = env.findAsset(assetName);
+        fs.readFile(asset.pathname, 'utf8', function (err, data) {
+          if (err) { throw err; }
+          source = data.trim();
+          done();
+        });
+      });
+    });
+
+    it('should compile properly', function (done) {
+      assert.doesNotThrow(function () {
         asset.compile(function (err, asset) {
           if (err) { throw err; }
-          assert.equal(myStrip(ECO.compile(source).call({}).toString()),
+          assert.equal(myStrip(ECO.render(source, {}).toString()),
                        myStrip(asset.toString()));
           done();
         });
