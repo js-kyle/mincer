@@ -26,10 +26,14 @@
                         "shellwords"  : "~ 0.1.0"
                       },
   "devDependencies" : {
-                        "mocha"        : "*",
-                        "ejs"          : "*",
-                        "eco"          : "*",
-                        "coffee-script": "*"
+                        "mocha"         : "*",
+                        "ejs"           : "*",
+                        "eco"           : "*",
+                        "coffee-script" : "*",
+                        "haml-coffee"   : "*",
+                        "jade"          : "*",
+                        "less"          : "*",
+                        "stylus"        : "*"
                       },
   "engines"         : { "node": ">= 0.6.0" }
 }

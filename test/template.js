@@ -2,11 +2,11 @@
 
 'use strict';
 
-var assert = require('assert'),
-    path   = require('path'),
-    fs     = require('fs'),
-    _      = require('underscore'),
-    Mincer = require('../lib/mincer');
+var assert  = require('assert')
+  , path    = require('path')
+  , fs      = require('fs')
+  , _       = require('underscore')
+  , Mincer  = require('../lib/mincer');
 
 Mincer.logger.use(console); // provide logger backend
 
@@ -89,30 +89,26 @@ function generateDescriptionWithJST(assetName) {
       });
     });
 
-    it('should generate a JST object in the scope', function (done) {
+    it('should generate a JST object in the scope', function () {
       assert.ok(scope.JST, 'a JST object must be generated, no JST found');
-      done();
     });
 
-    it('should generate a template inside JST object', function (done) {
+    it('should generate a template inside JST object', function () {
       assert.ok(scope.JST[assetName],
         'a member named by the assetName without extension, must be ' +
         'generated inside JST object, no JST[' + assetName + '] found.');
-      done();
     });
 
-    it('should generate a template function inside JST object', function (done) {
+    it('should generate a template function inside JST object', function () {
       assert.ok(scope.JST[assetName] instanceof Function,
         'the member of JST object named by the assetName without extension ' +
         'must be a function');
-      done();
     });
 
-    it('should generate a template function that renders correctly', function (done) {
+    it('should generate a template function that renders correctly', function () {
       var source = fs.readFileSync(compiledAsset.pathname, 'utf8').trim();
       assert.equal(compileSource(source).call(context, locals).trim(),
                    scope.JST[assetName].call(context, locals).trim());
-      done();
     });
   };
 }
@@ -161,7 +157,7 @@ function generateDescription(engineExtension, engineFileName, returnLazySource) 
       });
 
       if (returnLazySource) {
-        it('should evaluate lazy', function (done) {
+        it('should evaluate lazy', function () {
           assert.ok(!_.isString(result) && result instanceof EngineClass,
             'should evaluate lazy, but a string was passed to the callback. ' +
             'Expected the template object itself.');
@@ -169,37 +165,32 @@ function generateDescription(engineExtension, engineFileName, returnLazySource) 
             'a lazySource function must be generated in the template object');
           assert.ok(result.toString && _.isFunction(result.toString),
             'a toString method must be generated in the template object');
-          done();
         });
 
         describe('#lazySource()', function () {
-          it('should convert properly', function (done) {
+          it('should convert properly', function () {
             assert.equal(myStrip(compiledSource.call(context[0], context[1])),
                          myStrip(result.lazySource.call(context[0], context[1])));
-            done();
           });
         });
 
         describe('#toString()', function () {
-          it('should convert properly', function (done) {
+          it('should convert properly', function () {
             assert.equal(myStrip(compiledSource.call(context[0], context[1])),
                          myStrip(result.toString()));
-            done();
           });
         });
       } else {
-        it('should evaluate passing a string to the callback.', function (done) {
+        it('should evaluate passing a string to the callback.', function () {
           assert.ok(_.isString(result),
             'Passed result is ' + (typeof result) + '. String expected');
-          done();
         });
 
-        it('should convert properly', function (done) {
+        it('should convert properly', function () {
           var renderized = new Function('locals', 'return ' + result +
             '.call(this, locals)');
           assert.equal(myStrip(compiledSource.call(context[0], context[1])),
                        myStrip(renderized.call(context[0], context[1])));
-          done();
         });
       }
     });

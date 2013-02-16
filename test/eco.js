@@ -2,11 +2,12 @@
 
 'use strict';
 
-var assert = require('assert'),
-    path   = require('path'),
-    fs     = require('fs'),
-    ECO    = require('eco'),
-    Mincer = require('../lib/mincer');
+var assert  = require('assert')
+  , path    = require('path')
+  , fs      = require('fs')
+  , vm      = require('vm')
+  , ECO     = require('eco')
+  , Mincer  = require('../lib/mincer');
 
 Mincer.logger.use(console); // provide logger backend
 
@@ -70,7 +71,6 @@ describe('Asset', function () {
   describe('#compile() with JST', function () {
     var assetName = 'templates/figure-eco', /* jst.eco */
         compiledAsset,
-        callable,
         scope = {};
     var context = {
       id: 1,
@@ -84,37 +84,33 @@ describe('Asset', function () {
         asset.compile(function (err, asset) {
           if (err) { throw err; }
           compiledAsset = asset;
-          callable = new Function(asset.toString());
-          callable.call(scope);
+          vm.runInNewContext(asset.toString(), scope, 'asset.vm');
           done();
         });
       });
     });
 
-    it('should generate a JST object in the scope', function (done) {
+    it('should generate a JST object in the scope', function () {
       assert.ok(scope.JST, 'a JST object must be generated, no JST found');
-      done();
     });
 
-    it('should generate a template inside JST object', function (done) {
+    it('should generate a template inside JST object', function () {
       assert.ok(scope.JST[assetName],
         'a member named by the assetName without extension, must be ' +
         'generated inside JST object, no JST[' + assetName + '] found.');
-      done();
     });
 
-    it('should generate a template function inside JST object', function (done) {
+    /* That's invalid, because VM has another prototypes
+    it('should generate a template function inside JST object', function () {
       assert.ok(scope.JST[assetName] instanceof Function,
         'the member of JST object named by the assetName without extension ' +
         'must be a function');
-      done();
     });
-
-    it('should generate a template function that renders correctly', function (done) {
+    */
+    it('should generate a template function that renders correctly', function () {
       var source = fs.readFileSync(compiledAsset.pathname, 'utf8').trim();
       assert.equal(ECO.render(source, context),
                    scope.JST[assetName](context));
-      done();
     });
   });
 });
