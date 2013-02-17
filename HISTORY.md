@@ -1,5 +1,5 @@
-0.4.5 / WIP
------------
+0.4.5 / 2013-02-17
+------------------
 
 * Added ECO engine (thanks to @abravalheri).
 * Allow use EJS as JST engine alongside as processor (thanks to @abravalheri).
