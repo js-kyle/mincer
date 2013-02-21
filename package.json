@@ -30,6 +30,7 @@
                         "ejs"           : "*",
                         "eco"           : "*",
                         "coffee-script" : "*",
+                        "node-sass"     : "*",
                         "haml-coffee"   : "*",
                         "jade"          : "*",
                         "less"          : "*",
