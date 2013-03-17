@@ -1,3 +1,9 @@
+WIP
+---
+
+* Support literate CoffeeScript `.litcoffee`. Closes #73.
+
+
 0.4.5 / 2013-02-17
 ------------------
 
