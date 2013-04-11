@@ -12,10 +12,12 @@ var assert  = require('assert')
 
 Mincer.logger.use(console); // provide logger backend
 
-var env = new Mincer.Environment(__dirname + '/fixtures'),
-    assetPath = 'app/assets/javascripts';
+var env = new Mincer.Environment(__dirname + '/fixtures');
 
-env.appendPath(assetPath);
+
+env.appendPath("app/assets/javascripts");
+env.appendPath("app/assets/images");
+
 
 function remove_trailing_spaces(str) {
   return str.split("\n").map(function (l) {
