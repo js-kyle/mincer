@@ -64,12 +64,6 @@ environment.ContextClass.defineAssetPath(function (pathname, options) {
 
 
 if ('production' === process.env.NODE_ENV) {
-  //
-  // In production we assume that assets are not changed between requests,
-  // so we use cached version of environment. See API docs for details.
-  //
-
-  environment = environment.index;
 
   //
   // Enable JS and CSS compression
@@ -95,6 +89,14 @@ if ('production' === process.env.NODE_ENV) {
       callback(err);
     }
   };
+
+  //
+  // In production we assume that assets are not changed between requests,
+  // so we use cached version of environment. See API docs for details.
+  //
+
+  environment = environment.index;
+
 }
 
 
