@@ -1,4 +1,4 @@
-0.4.6 / 2013-04-22
+0.4.6 / 2013-04-23
 ------------------
 
 * Added support for literate CoffeeScript `.litcoffee`. Closes #73.
