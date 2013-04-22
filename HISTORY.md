@@ -1,7 +1,12 @@
-WIP
----
+0.4.6 / 2013-04-22
+------------------
 
-* Support literate CoffeeScript `.litcoffee`. Closes #73.
+* Added support for literate CoffeeScript `.litcoffee`. Closes #73.
+* Added `Coco` (Coffescript dialect) support, thanks to @utkarshkukreti
+* Added preliminary engines cache (currently for LESS only)
+* Improved visual look for 404 and other errors (show text in reply body)
+* Improved BSD compatibility, thanks to @utkarshkukreti
+* Improved `node_sass` support. Closes #76, thanks to @joshuairl.
 
 
 0.4.5 / 2013-02-17
