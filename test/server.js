@@ -22,7 +22,7 @@ describe('Server', function() {
   it('should add `X-SourceMap` header to responses returning compiled CoffeeScript assets', function(done) {
     request(app)
     .get('/assets/server/foo.js?body=1')
-    .expect('X-SourceMap', 'server/foo.js.map')
+    .expect('X-SourceMap', 'foo.js.map')
     .expect(200, 'console.log(\'foo\');\n')
     .end(function(err){
       if (err) { return done(err); }
@@ -51,7 +51,7 @@ describe('Server', function() {
   });
 
   it('should serve mapping file', function(done) {
-    var expectedMap = '{\n  "version": 3,\n  "file": "server/foojs",\n  "sourceRoot": "",\n  "sources": [\n    "server/foo.coffee"\n  ],\n  "names": [],\n  "mappings": "AAAA,CAAQ,EAAR,EAAA,EAAO"\n}';
+    var expectedMap = '{\n  "version": 3,\n  "file": "foo.js",\n  "sourceRoot": "",\n  "sources": [\n    "foo.coffee"\n  ],\n  "names": [],\n  "mappings": "AAAA,CAAQ,EAAR,EAAA,EAAO"\n}';
     request(app)
     .get('/assets/server/foo.js.map')
     .expect(200, expectedMap)
@@ -59,6 +59,9 @@ describe('Server', function() {
       if (err) { return done(err); }
       done();
     });
+  });
+
+  it('should not serve original source if disabled', function() {
   });
 
   // ---
