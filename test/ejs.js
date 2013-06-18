@@ -65,7 +65,7 @@ describe('class EjsEngine < Template', function () {
     });
   });
 
-  describe('Asset [.jst.ejs]', function () {
+  describe.skip('Asset [.jst.ejs]', function () {
     describe('#compile()', function () {
       var assetName = 'templates/figure-ejs', /* jst.ejs */
           compiledAsset,
