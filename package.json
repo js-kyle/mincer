@@ -33,7 +33,9 @@
                         "jade"          : "*",
                         "less"          : "*",
                         "node-sass"     : "*",
-                        "stylus"        : "*"
+                        "stylus"        : "*",
+                        "connect"       : "*",
+                        "supertest"     : "*"
                       },
   "engines"         : { "node": ">= 0.6.0" }
 }

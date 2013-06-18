@@ -17,9 +17,10 @@ var Mincer  = require('..');
 // Get Mincer environment
 //
 
+// We remove this preprocessor because it messes with source maps.
+Mincer.unregisterPostProcessor('application/javascript',  Mincer.DebugComments);
 
 var environment = require('./environment');
-
 
 //
 // Create connect application
