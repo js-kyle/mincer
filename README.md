@@ -264,7 +264,7 @@ When loaded, a JavaScript template function can be accessed by its logical path
 as a property on the global `JST` object. Invoke a template function to render
 the template as a string. The resulting string can then be inserted into the DOM.
 
-``` haml
+```
 // templates/hello.jst.hamlc
 %div= Hello, %span= #{ @name }!
 ```
