@@ -38,6 +38,7 @@ test: lint
 		echo "  $ make dev-deps" >&2 ; \
 		exit 128 ; \
 		fi
+	rm -rf ./test/assets/
 	NODE_ENV=test mocha
 
 
