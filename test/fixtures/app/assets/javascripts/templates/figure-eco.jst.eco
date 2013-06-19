@@ -1,5 +1,0 @@
-<% @id = 1 %>
-<header id="<%= "header#{@id}" %>">
-	<p><%= @text %>
-	<img src="<%= @asset_data_uri "header.jpg" %>" title="beautiful header" />
-</header>

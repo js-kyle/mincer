@@ -1,6 +1,5 @@
-/*global describe, it, before*/
-
-'use strict';
+/*jshint evil:true, strict:false*/
+/*global describe:true, it:true, before:true */
 
 var assert  = require('assert')
   , path    = require('path')

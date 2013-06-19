@@ -1,6 +1,5 @@
 /**
  *= require less-vendor
  *= require stylus-vendor
- *= require css-with-eco
  */
 .container { width: 90%; }
