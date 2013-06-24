@@ -1,1 +1,0 @@
-window.foo86 = true

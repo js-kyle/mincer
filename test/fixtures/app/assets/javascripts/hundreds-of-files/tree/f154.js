@@ -1,1 +1,0 @@
-window.foo154 = true
