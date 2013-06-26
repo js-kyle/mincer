@@ -1,3 +1,16 @@
+0.5.0 / ...
+------------------
+
+* API cleanup
+  - removed lazySources stuff, due bad implementation
+  - setting options in engunes renamed to `configure` (unufied name)
+  - simplified engines init
+  - removed
+* Added `Template.lib` hash to override libriaries, used by default
+* Added `bower.json` support
+* Improved windows support ('\' separators in paths)
+
+
 0.4.6 / 2013-04-23
 ------------------
 
