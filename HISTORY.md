@@ -3,7 +3,7 @@
 
 * API cleanup
   - removed lazySources stuff, due bad implementation
-  - setting options in engunes renamed to `configure` (unufied name)
+  - setting options in engines renamed to `configure` (unified name)
   - simplified engines init
   - removed
 * Added `Template.lib` hash to override libriaries, used by default
