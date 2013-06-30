@@ -69,18 +69,8 @@ if ('production' === process.env.NODE_ENV) {
   // Enable JS and CSS compression
   //
 
-  environment.jsCompressor = function (context, data) {
-    var ast = UglifyJS.parser.parse(data);
-
-    ast = UglifyJS.uglify.ast_mangle(ast);
-    ast = UglifyJS.uglify.ast_squeeze(ast);
-
-    return UglifyJS.uglify.gen_code(ast);
-  };
-
-  environment.cssCompressor = function (context, data) {
-    return Csso.justDoIt(data);
-  };
+  environment.jsCompressor  = "uglify";
+  environment.cssCompressor = "csso";
 
   //
   // In production we assume that assets are not changed between requests,
