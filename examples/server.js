@@ -131,22 +131,16 @@ viewHelpers.stylesheet = function stylesheet(logicalPath) {
 
 
 app.use(function (req, res, next) {
-  // make sure our assets were compiled, so their `digestPath`
-  // will be 100% correct, otherwise first request will produce
-  // wrong digestPath. That's not a big deal, as assets will be
-  // served anyway, but to keep everything correct, we use this
-  // precompilation, which is similar to using manifest, but
-  // without writing files on disk.
-  //
-  // See [[Base#precompile]] for details,
-  environment.precompile(['app.js', 'app.css'], function (err) {
-    if (err) {
-      next(err);
-      return;
-    }
+  var data;
 
-    res.end(view(viewHelpers));
-  });
+  try {
+    data = view(viewHelpers);
+  } catch (err) {
+    next(err);
+    return;
+  }
+
+  res.end(data);
 });
 
 

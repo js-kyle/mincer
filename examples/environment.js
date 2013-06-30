@@ -69,25 +69,17 @@ if ('production' === process.env.NODE_ENV) {
   // Enable JS and CSS compression
   //
 
-  environment.jsCompressor = function (context, data, callback) {
-    try {
-      var ast = UglifyJS.parser.parse(data);
+  environment.jsCompressor = function (context, data) {
+    var ast = UglifyJS.parser.parse(data);
 
-      ast = UglifyJS.uglify.ast_mangle(ast);
-      ast = UglifyJS.uglify.ast_squeeze(ast);
+    ast = UglifyJS.uglify.ast_mangle(ast);
+    ast = UglifyJS.uglify.ast_squeeze(ast);
 
-      callback(null, UglifyJS.uglify.gen_code(ast));
-    } catch (err) {
-      callback(err);
-    }
+    return UglifyJS.uglify.gen_code(ast);
   };
 
-  environment.cssCompressor = function (context, data, callback) {
-    try {
-      callback(null, Csso.justDoIt(data));
-    } catch (err) {
-      callback(err);
-    }
+  environment.cssCompressor = function (context, data) {
+    return Csso.justDoIt(data);
   };
 
   //
