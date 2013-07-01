@@ -1,4 +1,4 @@
-0.5.0 / ...
+0.5.0 / 2013.07.01
 ------------------
 
 * API cleanup
@@ -8,6 +8,7 @@
   - removed compile() method in favor of synchronous compilations
 * Added `Template.lib` hash to override libriaries, used by default
 * Added `bower.json` support
+* Added embedded JS/CSS compressors (`csso` & `uglify`)
 * Improved windows support ('\' separators in paths)
 
 
