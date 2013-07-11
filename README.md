@@ -15,7 +15,7 @@ See [Sprockets][1] and [Mincer API Documentation][2] for more details.
 
 # Notice on upgrade 0.4.x -> 0.5.x
 
-Minser's API changed to be sync. Please, check new examples, docs & update your sources.
+Mincer's API changed to be sync. Please, check new examples, docs & update your sources.
 
 
 # Installation
