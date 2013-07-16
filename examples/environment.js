@@ -6,6 +6,7 @@
 //
 
 
+var path      = require('path');
 var UglifyJS  = require('uglify-js');
 var Csso      = require('csso');
 var Mincer    = require('..');
@@ -39,6 +40,14 @@ environment.appendPath('assets/images');
 environment.appendPath('vendor/jquery');
 environment.appendPath('vendor/bootstrap/js');
 environment.appendPath('vendor/bootstrap/less');
+
+
+//
+// Cache compiled assets
+//
+
+
+environment.cache = new Mincer.FileStore(path.join(__dirname, 'cache'));
 
 
 //
