@@ -1,8 +1,9 @@
-0.5.1 / 2013.07.16
+0.5.1 / 2013.07.17
 ------------------
 
 * Added compilation cache. Usage:
   `env.cache = new Mincer.FileStore("/path/to/cache");`
+* Minor fixes
 
 
 0.5.0 / 2013.07.01
