@@ -1,4 +1,10 @@
-0.5.1 / 2013.07.17
+0.5.2 / 2013-07-22
+------------------
+
+* Fixed assets unserialisation from cache
+
+
+0.5.1 / 2013-07-17
 ------------------
 
 * Added compilation cache. Usage:
@@ -6,7 +12,7 @@
 * Minor fixes
 
 
-0.5.0 / 2013.07.01
+0.5.0 / 2013-07-01
 ------------------
 
 * API cleanup
