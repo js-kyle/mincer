@@ -25,4 +25,13 @@ describe("Engines", function () {
     });
   });
 
+  describe("LESS", function () {
+
+    it("should support context helpers", function () {
+      var asset = env.findAsset("less_engine/stylesheet");
+      assert(asset.toString().match(/\/assets\/ixti-[a-f0-9]{32}.gif/));
+      assert(asset.toString().match(/data:image\/gif;base64/));
+    });
+  });
+
 });
