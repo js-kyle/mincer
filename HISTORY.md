@@ -2,6 +2,9 @@
 ------------------
 
 * Fixed `less` helpers & added `less` tests (thanks to @btd)
+* Fixed `eco` engine
+* Fixed gzipped asets generation
+* Synked with `sprockets` 2.10.0 
 
 
 0.5.2 / 2013-07-22
