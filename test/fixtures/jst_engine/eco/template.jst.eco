@@ -1,0 +1,1 @@
+<div><%= "Monday is a hard day!" if 1 == (new Date).getDay() %></div>
