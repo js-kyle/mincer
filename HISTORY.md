@@ -1,10 +1,15 @@
+0.5.4 / 2013-08-06
+------------------
+
+* Fixed `eco` engine
+* Fixed gzipped asets generation
+* Synked with `sprockets` 2.10.0 
+
+
 0.5.3 / 2013-08-01
 ------------------
 
 * Fixed `less` helpers & added `less` tests (thanks to @btd)
-* Fixed `eco` engine
-* Fixed gzipped asets generation
-* Synked with `sprockets` 2.10.0 
 
 
 0.5.2 / 2013-07-22
