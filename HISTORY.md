@@ -1,7 +1,7 @@
-0.5.6 / WIP
------------
+0.5.6 / 2013-08-07
+------------------
 
-* Fix SASS engine.
+* Fix SASS engine, to follow new SASS api. SASS 0.5.0+ required
 
 
 0.5.5 / 2013-08-06
