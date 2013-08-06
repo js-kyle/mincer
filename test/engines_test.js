@@ -33,6 +33,13 @@ describe("Engines", function () {
     });
   });
 
+  describe("SASS", function () {
+    it("should process stylesheets", function () {
+      var asset = env.findAsset("sass_engine/stylesheet");
+      assert(asset.toString().match(/\.foo\s+\.bar\s*\{/));
+    });
+  });
+
 
   describe("JST", function () {
     describe("ECO", function () {
