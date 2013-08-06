@@ -1,9 +1,15 @@
+0.5.5 / WIP
+-----------
+
+* Adds simplified way to enable/disable processors.
+
+
 0.5.4 / 2013-08-06
 ------------------
 
 * Fixed `eco` engine
 * Fixed gzipped asets generation
-* Synked with `sprockets` 2.10.0 
+* Synced with `sprockets` 2.10.0 
 
 
 0.5.3 / 2013-08-01
