@@ -1,7 +1,9 @@
-0.5.5 / WIP
------------
+0.5.5 / 2013-08-06
+------------------
 
 * Adds simplified way to enable/disable processors.
+* Fixes broken circular dependency protector.
+* Adds location info for CoffeeScript compiler error (thanks @grindars).
 
 
 0.5.4 / 2013-08-06
