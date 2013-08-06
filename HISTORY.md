@@ -1,9 +1,10 @@
 0.5.5 / 2013-08-06
 ------------------
 
-* Adds simplified way to enable/disable processors.
-* Fixes broken circular dependency protector.
-* Adds location info for CoffeeScript compiler error (thanks @grindars).
+* Fixed broken circular dependency protector
+* Added `autoprefixer` support
+* Added simplified way to enable/disable processors
+* Added location info for CoffeeScript compiler error (thanks to @grindars)
 
 
 0.5.4 / 2013-08-06
