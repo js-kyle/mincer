@@ -8,7 +8,8 @@ Examples of Mincer usage.
 
 You will need install some additional modules in order to run these examples:
 
-    npm install connect less ejs uglify-js csso jade coffee-script haml-coffee
+    npm install connect less jade coffee-script haml-coffee ejs \
+      uglify-js csso autoprefixer
 
 
 Assets middleware server demo
