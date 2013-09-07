@@ -50,6 +50,14 @@ describe("Engines", function () {
         assert(asset.toString().match(/value\.ecoSafe/));
       });
     });
+
+    describe("EJS", function () {
+      it("should compile to a JS function", function () {
+        var asset = env.findAsset("jst_engine/ejs/template");
+        assert(asset.toString().match(/this\.JST/));
+        assert(asset.toString().match(/buf\.push/));
+      });
+    });
   });
 
 });
