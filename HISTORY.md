@@ -1,3 +1,11 @@
+0.5.8 / WIP
+-----------
+
+* Allow use all JST engines as in-middle pipeline processors. That allows to
+  have `*.jst.hbs.jade` that will generate Handlebars JST from HTML generated
+  with Jade.
+
+
 0.5.7 / 2013-08-15
 ------------------
 
