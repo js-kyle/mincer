@@ -1,3 +1,9 @@
+0.5.9 / 2013-10-12
+------------------
+
+* Fixed regression caused ignore of js/css compressions.
+
+
 0.5.8 / 2013-09-15
 ------------------
 
