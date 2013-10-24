@@ -29,6 +29,7 @@
                         "ejs"           : "*",
                         "eco"           : "*",
                         "coffee-script" : "*",
+                        "LiveScript"    : "*",
                         "haml-coffee"   : "*",
                         "jade"          : "*",
                         "less"          : "*",

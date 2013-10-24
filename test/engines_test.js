@@ -60,4 +60,11 @@ describe("Engines", function () {
     });
   });
 
+  describe("LIVE_SCRIPT", function () {
+    it("should compile .ls to .js", function () {
+      var asset = env.findAsset("ls_engine/javascript");
+      assert(asset.toString().match(/curried = curry\$/));
+      assert(asset.toString().match(/function curry\$\(f\, bound\)\{/));
+    });
+  });
 });
