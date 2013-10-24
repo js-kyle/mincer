@@ -1,3 +1,12 @@
+0.5.11 / 2013-10-24
+-------------------
+
+- Rolled back uglifier defaults, since last update caused Safari bugs.
+  See https://github.com/mishoo/UglifyJS2/issues/326 . If you have speed
+  issues - make sure, that input javascripts are not minified.
+- Added LiveScript support (@tomchentw)
+
+
 0.5.10 / 2013-10-17
 -------------------
 
