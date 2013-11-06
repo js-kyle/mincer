@@ -1,3 +1,10 @@
+0.5.12 / 2013-11-06
+-------------------
+
+- Fixed custom processor declaration (@kramerc).
+- Allow configure options of UglifyJS.
+
+
 0.5.11 / 2013-10-24
 -------------------
 
@@ -14,7 +21,7 @@
   disable minification, just some options. Using `compress` gives just 1% gain
   on gzipped result, but can cause huge performance loss if mincer receives
   already minified file on input.
-  
+
 
 0.5.9 / 2013-10-12
 ------------------
