@@ -78,7 +78,7 @@ function find_asset_paths(logicalPath, ext) {
     return null;
   }
 
-  if ('production' !== process.env.NODE_ENV && asset.isCompiled) {
+  if ('production' !== process.env.NODE_ENV) {
     asset.toArray().forEach(function (dep) {
       paths.push('/assets/' + rewrite_extension(dep.logicalPath, ext) + '?body=1');
     });
