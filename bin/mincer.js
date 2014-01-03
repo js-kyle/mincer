@@ -114,7 +114,7 @@ if (1 === filenames.length) {
   var asset = environment.findAsset(filenames[0]);
 
   if (!asset) {
-    console.error("Cannot find logical path: " + filenames[0]);
+    console.error('Cannot find logical path: ' + filenames[0]);
     process.exit(1);
   }
 
@@ -130,5 +130,5 @@ if (1 === filenames.length) {
 }
 
 
-console.error("Only one file can be compiled to stdout at a time");
+console.error('Only one file can be compiled to stdout at a time');
 process.exit(1);

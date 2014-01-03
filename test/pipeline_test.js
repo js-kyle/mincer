@@ -1,18 +1,18 @@
 /* global describe, it */
 
 
-"use strict";
+'use strict';
 
 
-var assert = require("assert");
+var assert = require('assert');
 
 
-describe("Assets Pipeline", function () {
+describe('Assets Pipeline', function () {
 
-  var env = require("./environment")();
+  var env = require('./environment')();
 
-  it("should process asset with engines from right to left", function () {
-    var asset = env.findAsset("pipeline/single_file");
+  it('should process asset with engines from right to left', function () {
+    var asset = env.findAsset('pipeline/single_file');
     assert(asset.toString().match(/h1\s+{\s+background-image:/g));
     assert(asset.toString().match(/\/assets\/ixti-[a-f0-9]{32}.gif/));
   });
