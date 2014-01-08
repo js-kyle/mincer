@@ -1,3 +1,13 @@
+0.5.13 / WIP
+-------------------
+
+- Added compatibility with Jade 1.0.0+ API.
+- Added compatibility with AutoPrefixer 1.0.0+ API.
+- Removed `deflate` support as useless & not safe (see #118 for details).
+- Simplified server logic.
+- Examples/readme fixes.
+
+
 0.5.12 / 2013-11-06
 -------------------
 
