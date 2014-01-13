@@ -1,4 +1,4 @@
-0.5.13 / WIP
+0.5.13 / 2014-01-13
 -------------------
 
 - Added compatibility with Jade 1.0.0+ API.
