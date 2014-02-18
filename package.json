@@ -16,13 +16,15 @@
   "bin"             : { "mincer": "bin/mincer.js" },
   "scripts"         : { "test": "make test" },
   "dependencies"    : {
-                        "argparse"    : "~ 0.1.15",
-                        "async"       : "~ 0.2.9",
-                        "fs-tools"    : "~ 0.2.10",
-                        "hike"        : "~ 0.1.3",
-                        "lodash"      : "~ 2.4.1",
-                        "mimoza"      : "~ 0.3.0",
-                        "shellwords"  : "~ 0.1.0"
+                        "argparse"           : "~ 0.1.15",
+                        "async"              : "~ 0.2.9",
+                        "fs-tools"           : "~ 0.2.10",
+                        "hike"               : "~ 0.1.3",
+                        "lodash"             : "~ 2.4.1",
+                        "mimoza"             : "~ 0.3.0",
+                        "shellwords"         : "~ 0.1.0",
+                        "convert-source-map" : "~ 0.3.3",
+                        "combine-source-map" : "~ 0.3.0"
                       },
   "devDependencies" : {
                         "mocha"         : "*",
