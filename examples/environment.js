@@ -41,11 +41,15 @@ environment.appendPath('vendor');
 
 
 //
-// Cache compiled assets
+// Cache compiled assets.
+//
+// You want this to be enabled on your dev/staging/production environment.
+// In order to enable it, uncomment following line. We keep it disabled in
+// order to quick-test new featurees without bumping up Mincer's version.
 //
 
 
-environment.cache = new Mincer.FileStore(path.join(__dirname, 'cache'));
+// environment.cache = new Mincer.FileStore(path.join(__dirname, 'cache'));
 
 
 //
