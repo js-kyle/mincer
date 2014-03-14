@@ -133,6 +133,12 @@ viewHelpers.stylesheet = function stylesheet(logicalPath) {
 app.use(function (req, res, next) {
   var data;
 
+  if ("/" != req.url) {
+    res.statusCode = 404
+    res.end("Not Found");
+    return;
+  }
+
   try {
     data = view(viewHelpers);
   } catch (err) {
