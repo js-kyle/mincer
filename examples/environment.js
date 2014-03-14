@@ -37,9 +37,7 @@ var environment = module.exports = new Mincer.Environment(__dirname);
 environment.appendPath('assets/javascripts');
 environment.appendPath('assets/stylesheets');
 environment.appendPath('assets/images');
-environment.appendPath('vendor/jquery');
-environment.appendPath('vendor/bootstrap/js');
-environment.appendPath('vendor/bootstrap/less');
+environment.appendPath('vendor');
 
 
 //

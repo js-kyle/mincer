@@ -1,5 +1,5 @@
-#= require jquery
-#= require bootstrap-modal
+#= require jquery/jquery
+#= require bootstrap/js/bootstrap-modal
 #= require_tree ./templates
 
 $ ->
