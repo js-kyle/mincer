@@ -28,6 +28,12 @@ var environment = module.exports = new Mincer.Environment(__dirname);
 
 
 //
+// Enable source maps support
+//
+
+environment.enable('source_maps');
+
+//
 // Configure environment load paths (where to find ssets)
 //
 
