@@ -84,7 +84,8 @@ if ('production' === process.env.NODE_ENV) {
   //
 
   environment.jsCompressor  = "uglify";
-  environment.cssCompressor = "csso";
+  // (!) now disabled, because does not supports sourcemaps
+  //environment.cssCompressor = "csso";
 
   //
   // In production we assume that assets are not changed between requests,

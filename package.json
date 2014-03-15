@@ -36,7 +36,10 @@
                         "jade"          : "*",
                         "less"          : "*",
                         "node-sass"     : "*",
-                        "stylus"        : "*"
-                      },
-  "engines"         : { "node": ">= 0.6.0" }
+                        "stylus"        : "*",
+                        "autoprefixer"  : "*",
+                        "uglify-js"     : "*",
+                        "csso"          : "*",
+                        "connect"       : "*"
+                      }
 }
