@@ -7,8 +7,6 @@
 
 
 var path      = require('path');
-var UglifyJS  = require('uglify-js');
-var Csso      = require('csso');
 var Mincer    = require('..');
 
 
@@ -84,8 +82,8 @@ if ('production' === process.env.NODE_ENV) {
   //
 
   environment.jsCompressor  = "uglify";
-  // (!) now disabled, because does not supports sourcemaps
-  //environment.cssCompressor = "csso";
+  // (!) use csswring, because csso does not supports sourcemaps
+  environment.cssCompressor = "csswring";
 
   //
   // In production we assume that assets are not changed between requests,

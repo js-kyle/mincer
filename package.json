@@ -40,6 +40,7 @@
                         "autoprefixer"  : "*",
                         "uglify-js"     : "*",
                         "csso"          : "*",
+                        "csswring"      : "*",
                         "connect"       : "*"
                       }
 }
