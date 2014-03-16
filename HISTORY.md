@@ -11,6 +11,7 @@
 - Fix root path comparison, #124
 - Improved `bower.json` support, #134
 - Logger now prefer to use `originalUrl` if exists
+- Removed patches of old LESS support. Just upgrate LESS too.
 
 
 0.5.13 / 2014-01-13
