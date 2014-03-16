@@ -1,3 +1,18 @@
+0.6.0 / WIP
+-------------------
+
+- NEW. Finally, added sourcemaps support.
+  Big thanks to @spect88 for kicking us with his pull requests :)
+- Reworked example.
+- Don't strip mincer directives from generated files
+- added `csswring` compressor, as alternative to `csso` -
+  less features, but or with sourcemaps.
+- Added support for coffee-script block comments
+- Fix root path comparison, #124
+- Improved `bower.json` support, #134
+- Logger now prefer to use `originalUrl` if exists
+
+
 0.5.13 / 2014-01-13
 -------------------
 
