@@ -205,7 +205,7 @@ to write CSS assets in Mincer. Use the extension `.css.less`.
 
 ## Styling with SASS
 
-[SASS](http://sass-lang.com/) is an extension of CSS3, adding nested rules, 
+[SASS](http://sass-lang.com/) is an extension of CSS3, adding nested rules,
 variables, mixins, selector inheritance, and more.
 
 If the `node-sass` Node module is available to your application, you can use SASS
@@ -285,6 +285,17 @@ JavaScript code embedded in an asset is evaluated in the context of a
 - embedding other application resources, such as a localized string
   database, in a JavaScript asset via JSON
 - embedding version constants loaded from another file
+
+
+## React.js and JSX syntax
+
+[React.js](http://facebook.github.io/react/) is a JavaScript library for
+building user interfaces embracing functional paradigm. JSX is a syntax
+extension that provides syntactic sugar for writing React components.
+
+If the `react-tools` Node module is available to your application, you can use
+JSX syntax in your JavaScript assets in Mincer.
+Use the extension `.js.jsx`.
 
 
 ## Using helpers

@@ -25,6 +25,13 @@ describe('Engines', function () {
     });
   });
 
+  describe('JSX', function () {
+    it('should transform jsx', function () {
+      var asset = env.findAsset('jsx_engine/javascript');
+      assert(asset.toString().match(/React.DOM.div/));
+    });
+  });
+
   describe('LESS', function () {
     it('should support context helpers', function () {
       var asset = env.findAsset('less_engine/stylesheet');
