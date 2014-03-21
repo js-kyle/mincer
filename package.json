@@ -23,8 +23,7 @@
                         "lodash"             : "~ 2.4.1",
                         "mimoza"             : "~ 0.3.0",
                         "shellwords"         : "~ 0.1.0",
-                        "convert-source-map" : "~ 0.3.3",
-                        "combine-source-map" : "~ 0.3.0"
+                        "source-map"         : "~ 0.1.33"
                       },
   "devDependencies" : {
                         "mocha"         : "*",
