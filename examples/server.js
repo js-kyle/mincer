@@ -69,31 +69,10 @@ function rewrite_extension(source, ext) {
 }
 
 
-// returns a list of asset paths
-function find_asset_paths(logicalPath, ext) {
-  var asset = environment.findAsset(logicalPath),
-      paths = [];
+viewHelpers.javascript = function javascript(logicalPath) {
+  var asset = environment.findAsset(logicalPath);
 
   if (!asset) {
-    return null;
-  }
-
-  if ('production' !== process.env.NODE_ENV) {
-    asset.toArray().forEach(function (dep) {
-      paths.push('/assets/' + rewrite_extension(dep.logicalPath, ext) + '?body=1');
-    });
-  } else {
-    paths.push('/assets/' + rewrite_extension(asset.digestPath, ext));
-  }
-
-  return paths;
-}
-
-
-viewHelpers.javascript = function javascript(logicalPath) {
-  var paths = find_asset_paths(logicalPath, '.js');
-
-  if (!paths) {
     // this will help us notify that given logicalPath is not found
     // without "breaking" view renderer
     return '<script type="application/javascript">alert("Javascript file ' +
@@ -101,16 +80,16 @@ viewHelpers.javascript = function javascript(logicalPath) {
            ' not found.")</script>';
   }
 
-  return paths.map(function (path) {
-    return '<script type="application/javascript" src="' + path + '"></script>';
-  }).join('\n');
+  return '<script type="application/javascript" src="/assets/' +
+    rewrite_extension(asset.digestPath, '.js') +
+    '"></script>';
 };
 
 
 viewHelpers.stylesheet = function stylesheet(logicalPath) {
-  var paths = find_asset_paths(logicalPath, '.css');
+  var asset = environment.findAsset(logicalPath);
 
-  if (!paths) {
+  if (!asset) {
     // this will help us notify that given logicalPath is not found
     // without "breaking" view renderer
     return '<script type="application/javascript">alert("Stylesheet file ' +
@@ -118,9 +97,9 @@ viewHelpers.stylesheet = function stylesheet(logicalPath) {
            ' not found.")</script>';
   }
 
-  return paths.map(function (path) {
-    return '<link rel="stylesheet" type="text/css" href="' + path + '" />';
-  }).join('\n');
+  return '<link rel="stylesheet" type="text/css" href="/assets/' +
+    rewrite_extension(asset.digestPath, '.css') +
+    '" />';
 };
 
 
