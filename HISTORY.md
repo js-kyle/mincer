@@ -3,6 +3,8 @@
 
 - NEW. Finally, added sourcemaps support.
 - Removed `/?body=1` - not needed anymore, after sourcemaps added.
+- `Manifest.compile()` & `Asset.writeTo()` are now sync and throw
+  exception on error. No async methods left in mincer anymore.
 - Reworked example.
 - Don't strip mincer directives from generated files
 - added `csswring` compressor, as alternative to `csso` -

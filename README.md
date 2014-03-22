@@ -20,6 +20,8 @@ Sourcemaps support added. See docs and examples for details.
 - `environment.enable('source_maps')`
 - use `csswring` css compressor instead of `csso`, for sourcemaps support
 - removed `/?body=1` stuff as replaced with sourcemaps
+- `Manifest.compile()` & `Asset.writeTo()` are now sync and throw
+  exception on error.
 
 # Installation
 
