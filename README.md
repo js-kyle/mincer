@@ -13,10 +13,13 @@ See [Sprockets][1] and [Mincer API Documentation][2] for more details.
 [1]: https://github.com/sstephenson/sprockets
 [2]: http://nodeca.github.com/mincer/
 
-# Notice on upgrade 0.4.x -> 0.5.x
+# Notice on upgrade 0.5.x -> 1.0.x
 
-Mincer's API changed to be sync. Please, check new examples, docs & update your sources.
+Sourcemaps support added. See docs and examples for details.
 
+- `environment.enable('source_maps')`
+- use `csswring` css compressor instead of `csso`, for sourcemaps support
+- removed `/?body=1` stuff as replaced with sourcemaps
 
 # Installation
 

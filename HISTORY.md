@@ -1,12 +1,12 @@
-0.6.0 / WIP
+1.0.0 / WIP
 -------------------
 
 - NEW. Finally, added sourcemaps support.
-  Big thanks to @spect88 for kicking us with his pull requests :)
+- Removed `/?body=1` - not needed anymore, after sourcemaps added.
 - Reworked example.
 - Don't strip mincer directives from generated files
 - added `csswring` compressor, as alternative to `csso` -
-  less features, but or with sourcemaps.
+  less features, but or with sourcemaps support.
 - Added support for coffee-script block comments
 - Fix root path comparison, #124
 - Improved `bower.json` support, #134
