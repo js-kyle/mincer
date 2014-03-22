@@ -73,7 +73,7 @@ environment.ContextClass.defineAssetPath(function (pathname, options) {
 });
 
 
-//environment.enable("autoprefixer");
+environment.enable("autoprefixer");
 
 
 //
