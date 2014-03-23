@@ -6,12 +6,17 @@ Mincer - assets processor
 JavaScript port of Sprockets (v2.10.0). It features same declarative dependency
 management (with exactly same language) for CSS and JavaScript and preprocessor
 pipeline. Mincer allows you to write assets in the languages like: CoffeeScript,
-LESS, Stylus.
+LESS, Stylus and others.
 
-See [Sprockets][1] and [Mincer API Documentation][2] for more details.
+Also, mincer cares about sourcemaps support (sprockets doesn't yet).
 
-[1]: https://github.com/sstephenson/sprockets
-[2]: http://nodeca.github.com/mincer/
+See [Sprockets](https://github.com/sstephenson/sprockets) and
+[Mincer API Documentation](http://nodeca.github.io/mincer/) for more details.
+
+Supported engines are described in [Wiki](https://github.com/nodeca/mincer/wiki).
+If you wish to add new engine support - read
+[tutorial](https://github.com/nodeca/mincer/wiki/How-to-create-addon).
+
 
 # Notice on upgrade 0.5.x -> 1.0.x
 
