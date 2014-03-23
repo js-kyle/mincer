@@ -29,7 +29,7 @@ try {
   var assetsData = manifest.compile(['app.js', 'app.css', 'stripes.png'], {
                                         compress: true,
                                         sourceMaps: true,
-                                        ourceMappingUrl: true
+                                        embedMappingComments: true
                                       });
 
   console.info('\n\nAssets were successfully compiled.\n' +
