@@ -26,7 +26,11 @@ var manifest = new Mincer.Manifest(environment, __dirname + '/public/assets');
 
 
 try {
-  var assetsData = manifest.compile(['app.js', 'app.css', 'stripes.png']);
+  var assetsData = manifest.compile(['app.js', 'app.css', 'stripes.png'], {
+                                        compress: true,
+                                        sourceMaps: true,
+                                        ourceMappingUrl: true
+                                      });
 
   console.info('\n\nAssets were successfully compiled.\n' +
                'Manifest data (a proper JSON) was written to:\n' +
