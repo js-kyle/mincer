@@ -1,5 +1,5 @@
-1.0.0 / WIP
--------------------
+1.0.0 / 2014-03-25
+------------------
 
 - NEW. Finally, added sourcemaps support.
 - Removed `/?body=1` - not needed anymore, after sourcemaps added.
