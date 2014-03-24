@@ -32,6 +32,7 @@ var environment = module.exports = new Mincer.Environment(__dirname);
 //
 
 environment.enable('source_maps');
+//environment.sourceRoot = '/'; // use to cheat nesting level in dev tools
 
 //
 // Configure environment load paths (where to find ssets)
