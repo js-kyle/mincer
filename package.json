@@ -37,6 +37,7 @@
                         "uglify-js"     : "*",
                         "csso"          : "*",
                         "csswring"      : "*",
-                        "connect"       : "*"
+                        "connect"       : "*",
+                        "traceur"       : "*"
                       }
 }
