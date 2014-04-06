@@ -40,6 +40,12 @@ describe('Engines', function () {
     });
   });
 
+  describe('ES6', function () {
+    it('should compile javascripts', function () {
+      var asset = env.findAsset('traceur_engine/javascript');
+      assert(asset.toString().match(/function Class\(\)/));
+    });
+  });
 
   describe('JST', function () {
     describe('EJS', function () {
