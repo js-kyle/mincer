@@ -26,6 +26,7 @@
                         "source-map"         : "~ 0.1.33"
                       },
   "devDependencies" : {
+                        "jshint"        : "*",
                         "mocha"         : "*",
                         "ejs"           : "*",
                         "coffee-script" : "*",
