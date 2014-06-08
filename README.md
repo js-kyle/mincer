@@ -1,7 +1,8 @@
 Mincer - assets processor
 =========================
 
-[![Build Status](https://secure.travis-ci.org/nodeca/mincer.png)](http://travis-ci.org/nodeca/mincer)
+[![Build Status](https://travis-ci.org/nodeca/mincer.svg?branch=master)](https://travis-ci.org/nodeca/mincer)
+[![NPM version](https://img.shields.io/npm/v/mincer.svg)](https://www.npmjs.org/package/mincer)
 
 JavaScript port of Sprockets (v2.10.0). It features same declarative dependency
 management (with exactly same language) for CSS and JavaScript and preprocessor
