@@ -1,3 +1,10 @@
+1.0.5 / 2014-06-23
+------------------
+
+- Fixed bower packages loading. Always load first file,
+  if array specified (#147).
+
+
 1.0.4 / 2014-06-09
 ------------------
 
