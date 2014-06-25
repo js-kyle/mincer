@@ -23,7 +23,8 @@
                         "mimoza"             : "~ 0.3.0",
                         "shellwords"         : "~ 0.1.0",
                         "pako"               : "~ 0.2.3",
-                        "source-map"         : "~ 0.1.33"
+                        "source-map"         : "~ 0.1.33",
+                        "glob"               : "~ 4.0.2"
                       },
   "devDependencies" : {
                         "jshint"        : "*",
