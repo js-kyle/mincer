@@ -13,7 +13,7 @@ describe('Directives', function () {
 
   describe('Glob', function () {
     it('should include files based on globs', function () {
-      var asset = env.findAsset('directive_glob/glob');
+      var asset = env.findAsset('directive_glob/js/glob');
       assert(asset.toString().match(/first_file/));
       assert(asset.toString().match(/second_file/));
     });
@@ -21,7 +21,7 @@ describe('Directives', function () {
 
   describe('Tree', function () {
     it('should include files based on tree', function () {
-      var asset = env.findAsset('directive_glob/tree');
+      var asset = env.findAsset('directive_glob/js/tree');
       assert(asset.toString().match(/first_file/));
       assert(asset.toString().match(/second_file/));
     });
