@@ -103,4 +103,29 @@ if ('production' === process.env.NODE_ENV) {
 
 
 //
+// Enable inline macros to embed compile-time variables into code,
+// instead of using EJS and chaining extentions. Then you can write things like
+//
+//     var url = "$$ JSON.stringify(asset_path('my_file.js')) $$";
+//
+// You can set guard regexps as second param. Also you can pass multiple values
+// via arrays.
+//
+
+
+Mincer.MacroProcessor.configure([ '.js', '.css' ]/*, true */);
+
+
+//
+// Mincer rebuilt assets on any dependency file change. But sometime result
+// depends on external variables: enviroment type, helper values and so one.
+// In this case, you should change enviroment "version" - place there any
+// unique string.
+//
+
+
+// enviroment.version = md5(JSON.stringify(your_version_object));
+
+
+//
 // "Th-th-th-that's all folks!"

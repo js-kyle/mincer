@@ -1,8 +1,13 @@
 'use strict';
 
 
+var Mincer = require('..');
+
 module.exports = function () {
-  var environment = new (require('..').Environment)(__dirname);
+
+  Mincer.MacroProcessor.configure([ '.js', '.css' ], true);
+
+  var environment = new (Mincer.Environment)(__dirname);
 
 
   environment.appendPath('fixtures');

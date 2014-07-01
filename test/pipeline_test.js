@@ -17,4 +17,8 @@ describe('Assets Pipeline', function () {
     assert(asset.toString().match(/\/assets\/ixti-[a-f0-9]{32}.gif/));
   });
 
+  it('should process macros', function () {
+    var asset = env.findAsset('pipeline/macros');
+    assert(asset.toString().match(/\/assets\/pipeline\/single_file-[a-f0-9]{32}.css/));
+  });
 });

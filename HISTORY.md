@@ -1,3 +1,10 @@
+1.1.0 / WIP
+------------------
+
+- (!) Added macros support. No more need to use ejs for embedding inline
+  variables.
+
+
 1.0.5 / 2014-06-23
 ------------------
 
