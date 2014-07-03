@@ -7,19 +7,25 @@ Mincer - assets processor
 JavaScript port of Sprockets (v2.10.0). It features same declarative dependency
 management (with exactly same language) for CSS and JavaScript and preprocessor
 pipeline. Mincer allows you to write assets in the languages like: CoffeeScript,
-LESS, Stylus and others.
+LESS, Stylus and others. Moreover mincer has advanced built-in features, not
+available in sprockets:
 
-Also, mincer cares about sourcemaps support (sprockets doesn't yet).
+- sourcemaps support
+- macros support (nice alternative to EJS)
 
-See [Sprockets](https://github.com/sstephenson/sprockets) and
-[Mincer API Documentation](http://nodeca.github.io/mincer/) for more details.
+See [Sprockets](https://github.com/sstephenson/sprockets),
+[Mincer API Documentation](http://nodeca.github.io/mincer/) and
+[Mincer examples](https://github.com/nodeca/mincer/tree/master/examples)
+for more details.
 
 Supported engines are described in [Wiki](https://github.com/nodeca/mincer/wiki).
 If you wish to add new engine support - read
-[tutorial](https://github.com/nodeca/mincer/wiki/How-to-create-addon).
+[tutorial](https://github.com/nodeca/mincer/wiki/How-to-create-addon). Also
+you can [search existing extentions](https://www.npmjs.org/browse/keyword/mincer-contrib)
+in npm.
 
 
-# Notice on upgrade 0.5.x -> 1.0.x
+## Notice on upgrade 0.5.x -> 1.0.x
 
 Sourcemaps support added. See docs and examples for details.
 
@@ -30,7 +36,8 @@ Sourcemaps support added. See docs and examples for details.
 - `Manifest.compile()` is now sync and throw exception on error.
 - Removed non mainstream engines: eco, coco, haml-coffee, livescript.
 
-# Installation
+
+## Installation
 
 Install Mincer from npm registry:
 
@@ -41,7 +48,7 @@ Or install bleeding edge version from GitHub repo:
     $ npm install git://github.com/nodeca/mincer.git
 
 
-# Using Mincer from CLI
+## Using Mincer from CLI
 
 To use Mincer from CLI, you will need to install it globally:
 
@@ -61,7 +68,7 @@ argument you want in it. For example:
     --include assets/javascripts --include assets/stylesheets --output public/assets
 
 
-# Understanding the Mincer Environment
+## Understanding the Mincer Environment
 
 You'll need an instance of the `Mincer.Environment` class to
 access and serve assets from your application.
@@ -72,7 +79,7 @@ which can be mounted directly as `request` event handler of `http.Server` or
 as `connect` middleware.
 
 
-## The Load Path
+### The Load Path
 
 The *load paths* is an ordered list of directories that Mincer uses to search
 for assets.
@@ -89,7 +96,7 @@ virtual filesystem. That means you can easily bundle JavaScript, CSS
 and images into a library and import them into your application.
 
 
-### Manipulating the Load Path
+#### Manipulating the Load Path
 
 To add a directory to your environment's load path, use the `appendPath` and
 `prependPath` methods. Directories at the beginning of the load path have
@@ -106,14 +113,14 @@ In general, you should append to the path by default and reserve
 prepending for cases where you need to override existing assets.
 
 
-## Accessing Assets
+### Accessing Assets
 
 Once you've set up your environment's load path, you can mount the
 environment as a server and request assets via HTTP. You can also
 access assets programmatically from within your application.
 
 
-### Logical Paths
+#### Logical Paths
 
 Assets in Mincer are always referenced by their *logical path*.
 
@@ -140,7 +147,7 @@ In this way, all directories in the load path are merged to create a
 virtual filesystem whose entries are logical paths.
 
 
-### Serving Assets Over HTTP
+#### Serving Assets Over HTTP
 
 When you mount an environment, all of its assets are accessible as
 logical paths underneath the *mount point*. For example, if you mount
@@ -164,7 +171,7 @@ app.use(function (req, res) {
 ```
 
 
-### Accessing Assets Programmatically
+#### Accessing Assets Programmatically
 
 You can use the `findAsset` method to retrieve an asset from a Mincers
 environment. Pass it a logical path and you'll get a `BundledAsset`
@@ -184,7 +191,7 @@ asset.pathname;   // full path on the filesystem
 ```
 
 
-# Using Engines
+## Using Engines
 
 Asset source files can be written in another language, like Stylus or
 CoffeeScript, and automatically compiled to CSS or JavaScript by
@@ -196,7 +203,7 @@ filename. For example, a CSS file written in Stylus might have the name
 might have the name `dialog.js.coffee`.
 
 
-## Styling with Stylus
+### Styling with Stylus
 
 [Stylus](http://learnboost.github.com/stylus/) is a revolutionary new language,
 providing an efficient, dynamic, and expressive way to generate CSS. Supporting
@@ -206,7 +213,7 @@ If the `stylus` Node module is available to your application, you can use Stylus
 to write CSS assets in Mincer. Use the extension `.css.styl`.
 
 
-## Styling with LESS
+### Styling with LESS
 
 [LESS](http://lesscss.org/) extends CSS with dynamic behavior such as
 variables, mixins, operations and functions.
@@ -215,7 +222,7 @@ If the `less` Node module is available to your application, you can use LESS
 to write CSS assets in Mincer. Use the extension `.css.less`.
 
 
-## Styling with SASS
+### Styling with SASS
 
 [SASS](http://sass-lang.com/) is an extension of CSS3, adding nested rules, 
 variables, mixins, selector inheritance, and more.
@@ -224,7 +231,7 @@ If the `node-sass` Node module is available to your application, you can use SAS
 to write CSS assets in Mincer. Use the extension `.css.sass` or `.css.scss`.
 
 
-## Scripting with CoffeeScript
+### Scripting with CoffeeScript
 
 [CoffeeScript](http://jashkenas.github.com/coffee-script/) is a
 language that compiles to the "good parts" of JavaScript, featuring a
@@ -236,7 +243,7 @@ CoffeeScript to write JavaScript assets in Mincer.
 Use the extension `.js.coffee`.
 
 
-## JavaScript Templating with Haml Coffee
+### JavaScript Templating with Haml Coffee
 
 Mincer supports JavaScript templates for client-side rendering of strings or
 markup. JavaScript templates have the special format extension `.jst` and are
@@ -273,7 +280,9 @@ calling renderer functions.
 [jade-runtime]:  https://github.com/visionmedia/jade/blob/master/runtime.js
 
 
-## Invoking JavaScript with EJS
+### Invoking JavaScript with EJS
+
+**Note** see macros description for more convenient alternative.
 
 Mincer provides an EJS engine for preprocessing assets using
 embedded JavaScript code. Append `.ejs` to a CSS or JavaScript asset's
@@ -299,7 +308,7 @@ JavaScript code embedded in an asset is evaluated in the context of a
 - embedding version constants loaded from another file
 
 
-## Using helpers
+### Using helpers
 
 Mincer provides an easy way to add your own helpers for engines:
 
@@ -325,8 +334,21 @@ Less you will need to add EJS engine as well:
 }
 ```
 
+### Macros
 
-# Managing and Bundling Dependencies
+This feature is designed as simple alternative to EJS, that does not requires
+additional extention and does not break language syntax. When enabled, any
+`'$$ expression $$'` or `"$$ expression $$"` pattern will be replaced with
+evaluated expression value. In expression you can write JS code and use
+registered helpers. Macros are off by default. You should enable those for
+particular extentions:
+
+```javascript
+Mincer.MacroProcessor.configure(['.js', '.css']);
+```
+
+
+## Managing and Bundling Dependencies
 
 You can create *asset bundles* -- ordered concatenations of asset
 source files -- by specifying dependencies in a special comment syntax
@@ -338,7 +360,7 @@ asset with dependencies, the dependencies will be included in order at
 the top of the file.
 
 
-## The Directive Processor
+### The Directive Processor
 
 Mincer runs the *directive processor* on each CSS and JavaScript
 source file. The directive processor scans for comment lines beginning
@@ -360,7 +382,7 @@ contain spaces, similar to commands in the Unix shell.
   that occur after the first line of code.
 
 
-### Supported Comment Types
+#### Supported Comment Types
 
 The directive processor understands comment blocks in three formats:
 
@@ -375,7 +397,7 @@ The directive processor understands comment blocks in three formats:
     #= require foo
 
 
-## Mincer Directives
+### Mincer Directives
 
 You can use the following directives to declare dependencies in asset
 source files.
@@ -385,48 +407,48 @@ logical path or a relative path. Relative paths begin with `./` and
 reference files relative to the location of the current file.
 
 
-### The `require` Directive ###
+#### The `require` Directive ###
 
 `require` *path* inserts the contents of the asset source file
 specified by *path*. If the file is required multiple times, it will
 appear in the bundle only once.
 
 
-### The `include` Directive ###
+#### The `include` Directive ###
 
 `include` *path* works like `require`, but inserts the contents of the
 specified source file even if it has already been included or
 required.
 
 
-### The `require_directory` Directive ###
+#### The `require_directory` Directive ###
 
 `require_directory` *path* requires all source files of the same
 format in the directory specified by *path*. Files are required in
 alphabetical order.
 
 
-### The `require_tree` Directive ###
+#### The `require_tree` Directive ###
 
 `require_tree` *path* works like `require_directory`, but operates
 recursively to require all files in all subdirectories of the
 directory specified by *path*.
 
 
-### The `require_self` Directive ###
+#### The `require_self` Directive ###
 
 `require_self` tells Mincer to insert the body of the current
 source file before any subsequent `require` or `include` directives.
 
 
-### The `depend_on` Directive ###
+#### The `depend_on` Directive ###
 
 `depend_on` *path* declares a dependency on the given *path* without
 including it in the bundle. This is useful when you need to expire an
 asset's cache in response to a change in another file.
 
 
-### The `stub` Directive ###
+#### The `stub` Directive ###
 
 `stub` *path* allows dependency to be excluded from the asset bundle.
 The *path* must be a valid asset and may or may not already be part
@@ -434,7 +456,7 @@ of the bundle. Once stubbed, it is blacklisted and can't be brought
 back by any other `require`.
 
 
-# Credits
+## Credits
 
 Great thanks to [Sam Stephenson][sam] and [Joshua Peek][josh] for the Sprockets,
 the most awesome and powerfull web assets processor I ever used, and which
@@ -446,7 +468,7 @@ sources.
 [josh]: https://github.com/josh
 
 
-# Author
+## Author
 
 [Aleksey V Zapparov][github] (follow [@zapparov][twitter] on twitter).
 
@@ -454,7 +476,7 @@ sources.
 [twitter]:  https://twitter.com/zapparov
 
 
-# License
+## License
 
 Copyright (c) 2012 [Vitaly Puzrin](https://github.com/puzrin)
 
