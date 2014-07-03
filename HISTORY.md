@@ -1,4 +1,4 @@
-1.1.0 / WIP
+1.1.0 / 2014-07-03
 ------------------
 
 - (!) Added macros support. No more need to use ejs for embedding inline
