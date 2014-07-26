@@ -1,7 +1,13 @@
+1.1.2 / WIP
+------------------
+
+- Fixed generated sourcemaps to work in Firefox
+
+
 1.1.1 / 2014-07-16
 ------------------
 
-- Fixed jade `include` support. 
+- Fixed jade `include` support.
 
 
 1.1.0 / 2014-07-03
