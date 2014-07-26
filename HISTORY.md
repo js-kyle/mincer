@@ -1,7 +1,8 @@
-1.1.2 / WIP
+1.1.2 / 2014-07-26
 ------------------
 
-- Fixed generated sourcemaps to work in Firefox
+- Fixed generated sourcemaps to work in Firefox, #151.
+- Bumped `hike` dependency (should work faster now)
 
 
 1.1.1 / 2014-07-16
