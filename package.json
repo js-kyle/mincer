@@ -26,18 +26,18 @@
                         "source-map"         : "~ 0.1.33"
                       },
   "devDependencies" : {
-                        "jshint"        : "*",
-                        "mocha"         : "*",
-                        "ejs"           : "*",
-                        "coffee-script" : "*",
-                        "jade"          : "*",
-                        "less"          : "*",
-                        "node-sass"     : "*",
-                        "stylus"        : "*",
-                        "autoprefixer"  : "*",
-                        "uglify-js"     : "*",
-                        "csso"          : "*",
-                        "csswring"      : "*",
-                        "connect"       : "*"
+                        "jshint"             : "*",
+                        "mocha"              : "*",
+                        "ejs"                : "*",
+                        "coffee-script"      : "*",
+                        "jade"               : "*",
+                        "less"               : "*",
+                        "node-sass"          : "*",
+                        "stylus"             : "*",
+                        "autoprefixer-core"  : "*",
+                        "uglify-js"          : "*",
+                        "csso"               : "*",
+                        "csswring"           : "*",
+                        "connect"            : "*"
                       }
 }
