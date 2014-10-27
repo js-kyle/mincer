@@ -18,7 +18,7 @@
   "dependencies"    : {
                         "argparse"           : "~ 0.1.15",
                         "fs-tools"           : "~ 0.2.10",
-                        "hike"               : "~ 0.1.4",
+                        "hike"               : "~ 1.0.0",
                         "lodash"             : "~ 2.4.1",
                         "mimoza"             : "~ 0.3.0",
                         "shellwords"         : "~ 0.1.0",
