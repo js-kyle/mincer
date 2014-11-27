@@ -1,3 +1,11 @@
+1.2.0 / WIP
+------------------
+
+- Internal API updates. Need more fresh dependencies in your projects:
+  - `autoprefixer` -> `autoprefixer-core`
+  - `csswring` v1 -> v2
+
+
 1.1.3 / 2014-08-17
 ------------------
 
