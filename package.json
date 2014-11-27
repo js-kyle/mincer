@@ -31,7 +31,7 @@
                         "ejs"                : "*",
                         "coffee-script"      : "*",
                         "jade"               : "*",
-                        "less"               : "*",
+                        "less"               : "~ 1.7",
                         "node-sass"          : "*",
                         "stylus"             : "*",
                         "autoprefixer-core"  : "*",
