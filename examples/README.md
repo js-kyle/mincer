@@ -4,7 +4,7 @@ Mincer Examples
 Examples of Mincer usage.
 
 - `server.js`:    Example of using Mincer's server for serving assets
-- `manifest.js`:  Example of useng Mincer's manifest compiler
+- `manifest.js`:  Example of using Mincer's manifest compiler
 
 You will need install some additional modules in order to run these examples:
 
