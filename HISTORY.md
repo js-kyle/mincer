@@ -4,6 +4,7 @@
 - Internal API updates. Need more fresh dependencies in your projects:
   - `autoprefixer` -> `autoprefixer-core`
   - `csswring` v1 -> v2
+- Don't search bower's deprecated `component.json` anymore.
 
 
 1.1.3 / 2014-08-17
