@@ -1,6 +1,8 @@
-#= require jquery/jquery
-#= require bootstrap/js/bootstrap-modal
-#= require_tree ./templates
+###
+= require jquery/jquery
+= require bootstrap/js/bootstrap-modal
+= require_tree ./templates
+###
 
 $ ->
   $dialog = $ JST["templates/foobar"]()
