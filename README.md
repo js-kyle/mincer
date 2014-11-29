@@ -25,16 +25,12 @@ you can [search existing extentions](https://www.npmjs.org/browse/keyword/mincer
 in npm.
 
 
-## Notice on upgrade 0.5.x -> 1.0.x
+## Notice on upgrade 1.1.x -> 1.2.x
 
-Sourcemaps support added. See docs and examples for details.
+Update dependencies in your project, if use these:
 
-- `environment.enable('source_maps')`
-- use `csswring` css compressor instead of `csso`, for sourcemaps support
-- removed `/?body=1` stuff as replaced with sourcemaps
-- removed `Asset.writeTo()` method.
-- `Manifest.compile()` is now sync and throw exception on error.
-- Removed non mainstream engines: eco, coco, haml-coffee, livescript.
+- replace `autoprefixer` -> `autoprefixer-core`
+- upgrade `csswring` 1.x -> 2.x
 
 
 ## Installation

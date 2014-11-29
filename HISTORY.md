@@ -5,6 +5,8 @@
   - `autoprefixer` -> `autoprefixer-core`
   - `csswring` v1 -> v2
 - Don't search bower's deprecated `component.json` anymore.
+- Fixed broken line maping in `safety_colons` processor, when content starts
+  with empty string (affected coffescripts, started with block comment).
 
 
 1.1.3 / 2014-08-17
