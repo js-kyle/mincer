@@ -23,20 +23,10 @@ help:
 
 
 lint:
-	if test ! `which jshint` ; then \
-		echo "You need 'jshint' installed in order to run lint." >&2 ; \
-		echo "  $ npm install" >&2 ; \
-		exit 128 ; \
-		fi
-	jshint . --show-non-errors
+	eslint ./
 
 
 test: lint
-	@if test ! `which mocha` ; then \
-		echo "You need 'mocha' installed in order to run tests." >&2 ; \
-		echo "  $ npm install" >&2 ; \
-		exit 128 ; \
-		fi
 	rm -rf ./test/assets/
 	NODE_ENV=test mocha
 
@@ -65,7 +55,7 @@ gh-pages:
 		git commit -q -m 'Recreated docs'
 	cd ${TMP_PATH} && \
 		git remote add remote ${REMOTE_REPO} && \
-		git push --force remote +master:gh-pages 
+		git push --force remote +master:gh-pages
 	rm -rf ${TMP_PATH}
 
 

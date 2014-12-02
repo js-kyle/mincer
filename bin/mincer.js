@@ -27,24 +27,24 @@ var cli = new ArgumentParser({
 });
 
 
-cli.addArgument(['--noenv'], {
+cli.addArgument([ '--noenv' ], {
   help:         'Disables .mincerrc file',
   action:       'storeTrue'
 });
 
-cli.addArgument(['-I', '--include'], {
+cli.addArgument([ '-I', '--include' ], {
   help:         'Adds the directory to the Mincer load path',
   metavar:      'DIRECTORY',
   action:       'append',
   required:     true
 });
 
-cli.addArgument(['-o', '--output'], {
+cli.addArgument([ '-o', '--output' ], {
   help:         'Copy provided assets into DIRECTORY',
   metavar:      'DIRECTORY'
 });
 
-cli.addArgument(['filenames'], {
+cli.addArgument([ 'filenames' ], {
   help:         'File(s) to process',
   metavar:      'FILE',
   nargs:        '+'
@@ -57,7 +57,7 @@ cli.addArgument(['filenames'], {
 if (-1 === process.argv.indexOf('--noenv')) {
   if (fs.existsSync('.mincerrc')) {
     var rcflags = fs.readFileSync('.mincerrc', 'utf8').replace(/^#.*/gm, '');
-    [].splice.apply(process.argv, [2, 0].concat(shellwords(rcflags)));
+    [].splice.apply(process.argv, [ 2, 0 ].concat(shellwords(rcflags)));
   }
 }
 
@@ -97,16 +97,19 @@ Mincer.logger.use(console);
 // Compiling manifest with bunch of files
 //
 
+/*eslint-disable no-console*/
 
 if (args.output) {
   var manifest = new Mincer.Manifest(environment, args.output);
+
   manifest.compile(filenames, function (err) {
     if (err) {
       console.error(err);
       process.exit(1);
     }
   });
-  return;
+
+  process.exit(0);
 }
 
 
@@ -126,7 +129,8 @@ if (1 === filenames.length) {
 
     process.stdout.write(asset.toString());
   });
-  return;
+
+  process.exit(0);
 }
 
 

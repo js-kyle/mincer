@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
+/*eslint-disable no-console*/
 
 //
 // Require some modules
@@ -50,7 +51,7 @@ try {
   view = fs.readFileSync(__dirname + '/views/layout.jade', 'utf8');
   view = jade.compile(view);
 } catch (err) {
-  console.error("Failed compile view: " + (err.message || err.toString()));
+  console.error('Failed compile view: ' + (err.message || err.toString()));
   process.exit(128);
 }
 
@@ -113,9 +114,9 @@ viewHelpers.stylesheet = function stylesheet(logicalPath) {
 app.use(function (req, res, next) {
   var data;
 
-  if ("/" != req.url) {
-    res.statusCode = 404
-    res.end("Not Found");
+  if (req.url !== '/') {
+    res.statusCode = 404;
+    res.end('Not Found');
     return;
   }
 
@@ -137,7 +138,7 @@ app.use(function (req, res, next) {
 
 app.listen(3000, function (err) {
   if (err) {
-    console.error("Failed start server: " + (err.message || err.toString()));
+    console.error('Failed start server: ' + (err.message || err.toString()));
     process.exit(128);
   }
 

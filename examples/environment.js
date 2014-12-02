@@ -6,7 +6,6 @@
 //
 
 
-var path      = require('path');
 var Mincer    = require('..');
 
 
@@ -67,14 +66,14 @@ environment.ContextClass.defineAssetPath(function (pathname, options) {
   var asset = this.environment.findAsset(pathname, options);
 
   if (!asset) {
-    throw new Error("File " + pathname + " not found");
+    throw new Error('File ' + pathname + ' not found');
   }
 
   return '/assets/' + asset.digestPath;
 });
 
 
-environment.enable("autoprefixer");
+environment.enable('autoprefixer');
 
 
 //
@@ -82,15 +81,15 @@ environment.enable("autoprefixer");
 //
 
 
-if ('production' === process.env.NODE_ENV) {
+if (process.env.NODE_ENV === 'production') {
 
   //
   // Enable JS and CSS compression
   //
 
-  environment.jsCompressor  = "uglify";
+  environment.jsCompressor  = 'uglify';
   // (!) use csswring, because csso does not supports sourcemaps
-  environment.cssCompressor = "csswring";
+  environment.cssCompressor = 'csswring';
 
   //
   // In production we assume that assets are not changed between requests,
