@@ -1,4 +1,4 @@
-1.2.0 / WIP
+1.2.0 / 2014-12-02
 ------------------
 
 - Internal API updates. Need more fresh dependencies in your projects:
