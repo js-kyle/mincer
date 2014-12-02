@@ -33,16 +33,16 @@ rules:
   no-lonely-if:         2
   no-multi-spaces:      0
   no-process-exit:      0
+  no-path-concat:       2
   no-trailing-spaces:   2
   no-underscore-dangle: 0
   quotes:               [ 2, single, avoid-escape ]
   radix:                2
   space-after-keywords: [ 2, always ] # Fixed in master
   space-in-brackets:    [ 2, always, { propertyName: false } ]
+  yoda:                 2
 
   # temporary
-  yoda:                 0
-  no-path-concat:       0
   consistent-return:    0
 
   #

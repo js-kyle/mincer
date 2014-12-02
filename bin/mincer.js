@@ -113,7 +113,7 @@ if (args.output) {
 }
 
 
-if (1 === filenames.length) {
+if (filenames.length === 1) {
   var asset = environment.findAsset(filenames[0]);
 
   if (!asset) {

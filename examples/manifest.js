@@ -8,6 +8,7 @@
 
 
 var Mincer = require('..');
+var path   = require('path');
 
 
 //
@@ -23,7 +24,7 @@ var environment = require('./environment');
 //
 
 
-var manifest = new Mincer.Manifest(environment, __dirname + '/public/assets');
+var manifest = new Mincer.Manifest(environment, path.join(__dirname, 'public', 'assets'));
 
 
 try {

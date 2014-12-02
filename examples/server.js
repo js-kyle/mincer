@@ -48,7 +48,7 @@ app.use('/assets/', Mincer.createServer(environment));
 var view;
 
 try {
-  view = fs.readFileSync(__dirname + '/views/layout.jade', 'utf8');
+  view = fs.readFileSync(path.join(__dirname, 'views', 'layout.jade'), 'utf8');
   view = jade.compile(view);
 } catch (err) {
   console.error('Failed compile view: ' + (err.message || err.toString()));
