@@ -23,7 +23,7 @@ help:
 
 
 lint:
-	eslint ./
+	eslint --reset ./
 
 
 test: lint
