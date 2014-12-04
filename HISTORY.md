@@ -1,4 +1,4 @@
-1.2.1 / WIP
+1.2.1 / 2014-12-04
 ------------------
 
 - Better csswring options - don't break IE hacks, clear all comments,
