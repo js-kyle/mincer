@@ -1,3 +1,10 @@
+1.2.1 / WIP
+------------------
+
+- Better csswring options - don't break IE hacks, clear all comments,
+  #171, thanks to @tortuetorche
+
+
 1.2.0 / 2014-12-02
 ------------------
 
