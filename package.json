@@ -42,7 +42,7 @@
     "source-map": "~ 0.1.40"
   },
   "devDependencies": {
-    "eslint": "0.10.0",
+    "eslint": "0.10.2",
     "eslint-plugin-nodeca": "~1.0.3",
     "mocha": "*",
     "autoprefixer-core": "*",
