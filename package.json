@@ -52,7 +52,7 @@
     "csswring": "*",
     "ejs": "*",
     "jade": "*",
-    "less": "~ 1.7",
+    "less": "*",
     "node-sass": "*",
     "stylus": "*",
     "uglify-js": "*"
