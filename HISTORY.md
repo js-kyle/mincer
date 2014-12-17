@@ -1,8 +1,14 @@
+1.2.2 / 2014-12-17
+------------------
+
+- Added LESS 2.0 support, thanks to @tikotzky.
+
+
 1.2.1 / 2014-12-04
 ------------------
 
 - Better csswring options - don't break IE hacks, clear all comments,
-  #171, thanks to @tortuetorche
+  #171, thanks to @tortuetorche.
 
 
 1.2.0 / 2014-12-02
