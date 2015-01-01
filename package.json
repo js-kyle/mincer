@@ -42,18 +42,19 @@
     "source-map": "~ 0.1.40"
   },
   "devDependencies": {
-    "eslint": "0.10.2",
-    "eslint-plugin-nodeca": "~1.0.3",
-    "mocha": "*",
     "autoprefixer-core": "*",
     "coffee-script": "*",
     "connect": "*",
     "csso": "*",
     "csswring": "*",
     "ejs": "*",
+    "eslint": "0.10.2",
+    "eslint-plugin-nodeca": "~1.0.3",
     "jade": "*",
     "less": "*",
     "node-sass": "< 2.0.0",
+    "mocha": "*",
+    "sinon": "^1.12.2",
     "stylus": "*",
     "uglify-js": "*"
   }
