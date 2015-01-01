@@ -53,7 +53,7 @@
     "ejs": "*",
     "jade": "*",
     "less": "*",
-    "node-sass": "*",
+    "node-sass": "< 2.0.0",
     "stylus": "*",
     "uglify-js": "*"
   }
