@@ -1,14 +1,10 @@
 /* global describe, it */
 
-
 'use strict';
-
 
 var assert = require('assert');
 
-
 describe('Engines', function () {
-
   var env = require('./environment')();
 
   describe('EJS', function () {
@@ -22,6 +18,26 @@ describe('Engines', function () {
       var asset = env.findAsset('ejs_engine/stylesheet');
       assert(asset.toString().match(/\/assets\/ixti-[a-f0-9]{32}.gif/));
       assert(asset.toString().match(/data:image\/gif;base64/));
+    });
+  });
+
+  describe('JST', function () {
+    describe('with EJS backend', function () {
+      it('should compile to a JS function', function () {
+        var asset = env.findAsset('jst_engine/ejs/template');
+        assert(asset.toString().match(/this\.JST/));
+        assert(asset.toString().match(/buf\.push/));
+      });
+    });
+
+    describe('with JADE backend', function () {
+      it('should compile to a JS function', function () {
+        var asset = env.findAsset('jst_engine/jade/template');
+        assert(asset.toString().match(/this\.JST/));
+        assert(asset.toString().match(/buf\.push/));
+        assert(asset.toString().match(/template/));
+        assert(asset.toString().match(/included/));
+      });
     });
   });
 
@@ -39,26 +55,4 @@ describe('Engines', function () {
       assert(asset.toString().match(/\.foo\s+\.bar\s*\{/));
     });
   });
-
-
-  describe('JST', function () {
-    describe('EJS', function () {
-      it('should compile to a JS function', function () {
-        var asset = env.findAsset('jst_engine/ejs/template');
-        assert(asset.toString().match(/this\.JST/));
-        assert(asset.toString().match(/buf\.push/));
-      });
-    });
-
-    describe('JADE', function () {
-      it('should compile to a JS function', function () {
-        var asset = env.findAsset('jst_engine/jade/template');
-        assert(asset.toString().match(/this\.JST/));
-        assert(asset.toString().match(/buf\.push/));
-        assert(asset.toString().match(/template/));
-        assert(asset.toString().match(/included/));
-      });
-    });
-  });
-
 });
