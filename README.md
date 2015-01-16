@@ -310,7 +310,8 @@ Mincer provides an easy way to add your own helpers for engines:
 
 ``` javascript
 environment.registerHelper('version', function () {
-  return require(__dirname, '/package.json').version;
+  var path = require('path');
+  return require( path.join(__dirname, '/package.json') ).version;
 });
 ```
 
