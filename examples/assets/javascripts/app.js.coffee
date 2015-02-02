@@ -1,6 +1,6 @@
 ###
 = require jquery/jquery
-= require bootstrap/js/bootstrap-modal
+= require bootstrap/js/modal
 = require_tree ./templates
 ###
 
