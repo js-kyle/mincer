@@ -1,6 +1,6 @@
 {
   "name": "mincer",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Web assets processor. Native JavaScript port of Sprockets.",
   "keywords": [
     "sprockets",

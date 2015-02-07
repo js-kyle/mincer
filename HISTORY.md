@@ -1,3 +1,16 @@
+1.2.3 / 2015-02-07
+------------------
+
+- Fixed examples compatibility with LESS 2.x (#182, thanks to @tikotzky)
+- Loger improvements (#176, thanks to @jisaacks)
+  - added `.level()` method
+  - methods are now chainable
+  - tests
+- Fixed iteration over bower main files (#166, thanks to @mileszim)
+- Fixed SASS indented style support (#184, thanks to @rodrigoscna)
+- Bumped `mimoza` dependency & updated api calls appropriately.
+
+
 1.2.2 / 2014-12-17
 ------------------
 
