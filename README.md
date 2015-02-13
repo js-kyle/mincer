@@ -239,7 +239,7 @@ CoffeeScript to write JavaScript assets in Mincer.
 Use the extension `.js.coffee`.
 
 
-### JavaScript Templating with Haml Coffee
+### JavaScript Templating with Jade
 
 Mincer supports JavaScript templates for client-side rendering of strings or
 markup. JavaScript templates have the special format extension `.jst` and are
@@ -250,8 +250,8 @@ as a property on the global `JST` object. Invoke a template function to render
 the template as a string. The resulting string can then be inserted into the DOM.
 
 ```
-// templates/hello.jst.hamlc
-%div= Hello, %span= #{ @name }!
+// templates/hello.jst.jade
+div Hello, #{ name }!
 ```
 
 ``` javascript
@@ -260,18 +260,13 @@ the template as a string. The resulting string can then be inserted into the DOM
 $("#hello").html(JST["templates/hello"]({ name: "Sam" }));
 ```
 
-Mincer supports two template languages: [Haml Coffee][hamlc] and [Jade][jade].
-
-If `coffee-script` and `haml-coffee` are available to your application, you can
-use _Haml Cofee_ templates in Mincer. Haml Coffee templates have the extension
-`.jst.hamlc`.
+Mincer supports one template languages: [Jade][jade].
 
 If `jade` Node module is available to your application, you can use _Jade_
 templates in Mincer. Jade templates have the extension `.jst.jade`. To use
 compiled templates you will need to require Jade [runtime][jade-runtime] before
 calling renderer functions.
 
-[hamlc]:         https://github.com/netzpirat/haml-coffee
 [jade]:          https://github.com/visionmedia/jade
 [jade-runtime]:  https://github.com/visionmedia/jade/blob/master/runtime.js
 
