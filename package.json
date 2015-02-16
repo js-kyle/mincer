@@ -53,7 +53,7 @@
     "eslint-plugin-nodeca": "~1.0.3",
     "jade": "*",
     "less": "*",
-    "node-sass": "< 2.0.0",
+    "node-sass": "*",
     "mocha": "*",
     "sinon": "^1.12.2",
     "stylus": "*",
