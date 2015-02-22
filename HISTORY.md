@@ -1,5 +1,5 @@
-wip
----
+1.2.4 / 2015-02-22
+------------------
 
 - Added node-sass 2.0 support, thanks to @gabooh.
 
