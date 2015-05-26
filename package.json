@@ -48,7 +48,7 @@
     "connect": "*",
     "csso": "*",
     "csswring": "*",
-    "ejs": "~ 1.*",
+    "ejs": "*",
     "eslint": "0.10.2",
     "eslint-plugin-nodeca": "~1.0.3",
     "jade": "*",
