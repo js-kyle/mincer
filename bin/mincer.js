@@ -102,12 +102,12 @@ Mincer.logger.use(console);
 if (args.output) {
   var manifest = new Mincer.Manifest(environment, args.output);
 
-  manifest.compile(filenames, function (err) {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-  });
+  try {
+    manifest.compile(filenames);
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
 
   process.exit(0);
 }
