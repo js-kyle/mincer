@@ -1,3 +1,11 @@
+1.2.5 / 2015-06-09
+------------------
+
+- SASS engine: pass file name, thanks to @cgc.
+- LESS engine: improved deps (imports) tracking for 2.0+, thanks to @alexanderweiss.
+- EJS 2.0+ support, thanks to @jeremyruppel.
+
+
 1.2.4 / 2015-02-22
 ------------------
 
