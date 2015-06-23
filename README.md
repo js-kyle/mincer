@@ -25,6 +25,13 @@ you can [search existing extentions](https://www.npmjs.org/browse/keyword/mincer
 in npm.
 
 
+## Notice on upgrade 1.2.x -> 1.3.x
+
+If your project is using `autoprefixer-core` or `csswring`:
+
+- include `postcss` >= 4.1
+
+
 ## Notice on upgrade 1.1.x -> 1.2.x
 
 Update dependencies in your project, if use these:
@@ -220,7 +227,7 @@ to write CSS assets in Mincer. Use the extension `.css.less`.
 
 ### Styling with Sass
 
-[Sass](http://sass-lang.com/) is an extension of CSS3, adding nested rules, 
+[Sass](http://sass-lang.com/) is an extension of CSS3, adding nested rules,
 variables, mixins, selector inheritance, and more.
 
 If the `node-sass` Node module is available to your application, you can use Sass
