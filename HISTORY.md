@@ -1,3 +1,12 @@
+1.3.0 / 2015-06-24
+------------------
+
+- Updated API compatibility for postcss-related modules (autoprefixer, csswring).
+  Now you have to add `postcss` dependency to make those work right. Thanks to
+  @netsgnut.
+- Version bump to notify users about possible `postcss` dependency.
+
+
 1.2.5 / 2015-06-09
 ------------------
 
