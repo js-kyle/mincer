@@ -1,0 +1,6 @@
+.foo {
+  background-image: asset_path("ixti.gif");
+}
+.bar {
+  background-image: asset_data_uri("ixti.gif");;
+}

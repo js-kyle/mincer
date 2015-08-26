@@ -91,5 +91,11 @@ describe('Engines', function () {
       assert(asset.toString().match(/\.foo\s+\.bar\s*\{/));
       assert(asset.toString().match(/\.column\s+\{\s+width:\s*40px/));
     });
+
+    it('should support context helpers', function () {
+      var asset = env.findAsset('sass_engine/helpers');
+      assert(asset.toString().match(/\/assets\/ixti-[a-f0-9]{32}.gif/));
+      assert(asset.toString().match(/data:image\/gif;base64/));
+    });
   });
 });
