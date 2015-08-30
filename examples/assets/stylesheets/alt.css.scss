@@ -1,0 +1,10 @@
+@import "helper";
+
+body {
+  transition: transform 1s;
+
+  h2 {
+    color: $h1-color;
+    background-color: rgb(255,255,255);
+  }
+}
