@@ -25,6 +25,7 @@ function bumpMtimeSync(pathname) {
 
 describe('Engines', function () {
   var env = require('./environment')();
+  var Mincer = require('..');
 
   describe('EJS', function () {
     it('should process javascripts', function () {
@@ -96,6 +97,14 @@ describe('Engines', function () {
       var asset = env.findAsset('sass_engine/helpers');
       assert(asset.toString().match(/\/assets\/ixti-[a-f0-9]{32}.gif/));
       assert(asset.toString().match(/data:image\/gif;base64/));
+    });
+
+    it('should be configurable', function () {
+      Mincer.SassEngine.configure({ outputStyle: 'compressed' });
+      bumpMtimeSync(assetPath('sass_engine/grid.css.scss'));
+
+      var asset = env.findAsset('sass_engine/grid');
+      assert(asset.toString().match(/\.column\{width:40px/));
     });
   });
 });
