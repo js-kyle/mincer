@@ -28,7 +28,7 @@ var manifest = new Mincer.Manifest(environment, path.join(__dirname, 'public', '
 
 
 try {
-  var assetsData = manifest.compile([ 'app.js', 'app.css', 'stripes.png' ], {
+  var assetsData = manifest.compile([ 'app.js', 'app.css', 'alt.css', 'stripes.png' ], {
     compress: true,
     sourceMaps: true,
     embedMappingComments: true
