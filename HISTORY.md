@@ -1,3 +1,11 @@
+1.3.1 / 2015-09-05
+------------------
+
+- (!) Added `node-sass` sourcemaps support, thanks to @inukshuk.
+- Added support for `node-sass` helpers, errors and confuguration. Thanks to
+  @inukshuk & @rhyzx.
+
+
 1.3.0 / 2015-06-24
 ------------------
 
