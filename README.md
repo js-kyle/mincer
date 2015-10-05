@@ -27,7 +27,7 @@ in npm.
 
 ## Notice on upgrade 1.2.x -> 1.3.x
 
-If your project is using `autoprefixer-core` or `csswring`:
+If your project is using `autoprefixer` or `csswring`:
 
 - include `postcss` >= 4.1
 
@@ -36,7 +36,6 @@ If your project is using `autoprefixer-core` or `csswring`:
 
 Update dependencies in your project, if use these:
 
-- replace `autoprefixer` -> `autoprefixer-core`
 - upgrade `csswring` 1.x -> 2.x
 
 

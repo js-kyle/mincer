@@ -43,7 +43,7 @@
     "source-map": "~ 0.1.40"
   },
   "devDependencies": {
-    "autoprefixer-core": "*",
+    "autoprefixer": "*",
     "coffee-script": "*",
     "connect": "*",
     "csso": "*",
