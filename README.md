@@ -25,9 +25,14 @@ you can [search existing extentions](https://www.npmjs.org/browse/keyword/mincer
 in npm.
 
 
+## Notice on upgrade 1.3.x -> 1.4.x
+
+If your project is using `autoprefixer-core` replace it with `autoprefixer`.
+
+
 ## Notice on upgrade 1.2.x -> 1.3.x
 
-If your project is using `autoprefixer` or `csswring`:
+If your project is using `autoprefixer-core` or `csswring`:
 
 - include `postcss` >= 4.1
 
