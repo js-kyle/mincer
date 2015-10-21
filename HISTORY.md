@@ -1,3 +1,10 @@
+master / unreleased
+-------------------
+
+- Internal API updates.
+  - `autoprefixer-core` -> `autoprefixer`
+
+
 1.3.1 / 2015-09-05
 ------------------
 
