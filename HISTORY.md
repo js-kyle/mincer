@@ -218,7 +218,7 @@
 
 - Fixed `eco` engine
 - Fixed gzipped asets generation
-- Synced with `sprockets` 2.10.0 
+- Synced with `sprockets` 2.10.0
 
 
 0.5.3 / 2013-08-01
