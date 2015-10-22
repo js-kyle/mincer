@@ -25,18 +25,13 @@ you can [search existing extentions](https://www.npmjs.org/browse/keyword/mincer
 in npm.
 
 
-## Notice on upgrade 1.2.x -> 1.3.x
+## Notice on upgrade to 1.4.x
 
-If your project is using `autoprefixer` or `csswring`:
+If your project is using `autoprefixer` or `csswring` processors:
 
+- upgrade `csswring` & `autoprefixer` to latest
+  - if you used legacy `autoprefixer-core` package, replace it with `autoprefixer`
 - include `postcss` >= 4.1
-
-
-## Notice on upgrade 1.1.x -> 1.2.x
-
-Update dependencies in your project, if use these:
-
-- upgrade `csswring` 1.x -> 2.x
 
 
 ## Installation
@@ -44,10 +39,6 @@ Update dependencies in your project, if use these:
 Install Mincer from npm registry:
 
     $ npm install mincer
-
-Or install bleeding edge version from GitHub repo:
-
-    $ npm install git://github.com/nodeca/mincer.git
 
 
 ## Using Mincer from CLI

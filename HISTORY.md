@@ -1,3 +1,9 @@
+1.4.0 / WIP
+------------------
+
+- Maintenance, internal API update: `autoprefixer-core` -> `autoprefixer`.
+
+
 1.3.1 / 2015-09-05
 ------------------
 
