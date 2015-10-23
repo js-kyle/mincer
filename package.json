@@ -34,10 +34,10 @@
   "dependencies": {
     "argparse": "~ 0.1.16",
     "compressible": "^ 2.0.2",
-    "fs-tools": "~ 0.2.11",
     "hike": "~ 1.0.0",
     "lodash": "~ 2.4.1",
     "mimoza": "~ 1.0.0",
+    "mkdirp": "^0.5.1",
     "pako": "~ 0.2.5",
     "shellwords": "~ 0.1.0",
     "source-map": "~ 0.1.40"

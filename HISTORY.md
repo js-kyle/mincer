@@ -2,6 +2,7 @@
 ------------------
 
 - Maintenance, internal API update: `autoprefixer-core` -> `autoprefixer`.
+- `fs-tools` -> `mkdirp`.
 
 
 1.3.1 / 2015-09-05
