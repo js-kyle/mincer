@@ -13,18 +13,8 @@
   ],
   "homepage": "https://github.com/nodeca/mincer",
   "author": "Aleksey V Zapparov <ixti@member.fsf.org> (http://ixti.net/)",
-  "bugs": {
-    "url": "https://github.com/nodeca/mincer/issues"
-  },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/nodeca/mincer/blob/master/LICENSE"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/nodeca/mincer.git"
-  },
-  "main": "./index.js",
+  "license": "MIT",
+  "repository": "nodeca/mincer",
   "bin": {
     "mincer": "bin/mincer.js"
   },
