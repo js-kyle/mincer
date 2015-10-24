@@ -4,6 +4,7 @@
 
 var spawn = require('child_process').spawn;
 var path  = require('path');
+var _     = require('lodash');
 
 
 var request = require('supertest')('http://localhost:3000');
@@ -13,7 +14,11 @@ describe('Examples', function () {
   var srv;
 
   before(function (done) {
-    srv = spawn(path.join(__dirname, '../examples/server.js'));
+    // Turn on compression modules for CSS & JS
+    var env = _.assign({}, process.env, { NODE_ENV: 'production' });
+
+    srv = spawn(path.join(__dirname, '../examples/server.js'), [], { env: env });
+
     setTimeout(done, 1000);
   });
 
