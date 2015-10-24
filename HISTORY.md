@@ -1,7 +1,10 @@
 1.4.0 / WIP
 ------------------
 
-- Maintenance, internal API update: `autoprefixer-core` -> `autoprefixer`.
+- Maintenance, internal API update:
+  - `autoprefixer-core` -> `autoprefixer`
+  - Dropped old `autoprefixer` & `csswring` support. Updae those modules, if used.
+- Fixed source maps `sourcesContent` field for Less 2.x engine.
 - `fs-tools` -> `mkdirp`.
 
 
