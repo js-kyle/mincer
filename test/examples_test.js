@@ -2,7 +2,7 @@
 'use strict';
 
 
-var spawn = require('child_process').spawn;
+var child = require('child_process');
 var path  = require('path');
 var _     = require('lodash');
 
@@ -17,17 +17,36 @@ describe('Examples', function () {
     // Turn on compression modules for CSS & JS
     var env = _.assign({}, process.env, { NODE_ENV: 'production' });
 
-    srv = spawn(path.join(__dirname, '../examples/server.js'), [], { env: env });
+    srv = child.spawn(path.join(__dirname, '../examples/server.js'), [], { env: env });
 
     setTimeout(done, 1000);
   });
 
 
-  it('Ping server demo', function (done) {
+  it('Server ping', function (done) {
     request.get('/')
       .expect(200)
       .expect(/<!DOCTYPE html>/)
       .end(done);
+  });
+
+
+  it('Manifest run', function (done) {
+    child.exec(path.join(__dirname, '../examples/manifest.js'), function (err) {
+      if (err) {
+        done(err);
+        return;
+      }
+
+      var manifest = require(path.join(__dirname, '../examples/public/assets/manifest.json'));
+
+      if (!manifest.assets) {
+        done(new Error('No assets found in manifest: ' + manifest));
+        return;
+      }
+
+      done();
+    });
   });
 
 

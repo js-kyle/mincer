@@ -41,4 +41,5 @@ try {
   console.dir(assetsData);
 } catch (err) {
   console.error('Failed compile assets: ' + (err.message || err.toString()));
+  process.exit(1);
 }
