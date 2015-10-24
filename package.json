@@ -1,6 +1,6 @@
 {
   "name": "mincer",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Web assets processor. Native JavaScript port of Sprockets.",
   "keywords": [
     "sprockets",
@@ -28,7 +28,7 @@
     "lodash": "^3.10.1",
     "mimoza": "^1.0.0",
     "mkdirp": "~ 0.5.1",
-    "pako": "~ 0.2.5",
+    "pako": "~ 0.2.8",
     "shellwords": "~ 0.1.0",
     "source-map": "~ 0.5.3"
   },
