@@ -5,6 +5,7 @@
   - `autoprefixer-core` -> `autoprefixer`
   - Dropped old `autoprefixer` & `csswring` support. Updae those modules, if used.
 - Fixed source maps `sourcesContent` field for Less 2.x engine.
+- Added stylus sourcemaps support.
 - `fs-tools` -> `mkdirp`.
 
 
