@@ -43,10 +43,12 @@
     "eslint-plugin-nodeca": "~1.0.3",
     "jade": "*",
     "less": "*",
-    "node-sass": "*",
     "mocha": "*",
+    "node-sass": "*",
+    "postcss": "*",
     "sinon": "^1.12.2",
     "stylus": "*",
+    "supertest": "^1.1.0",
     "uglify-js": "*"
   }
 }
