@@ -30,7 +30,7 @@
     "mkdirp": "~ 0.5.1",
     "pako": "~ 0.2.5",
     "shellwords": "~ 0.1.0",
-    "source-map": "~ 0.1.40"
+    "source-map": "~ 0.5.3"
   },
   "devDependencies": {
     "autoprefixer": "*",
