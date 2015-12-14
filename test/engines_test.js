@@ -73,7 +73,9 @@ describe('Engines', function () {
     var variablesPath = assetPath('sass_engine/_variables.css.scss');
 
     after(function() {
-      fs.unlinkSync(variablesPath);
+      if (fs.existsSync(variablesPath)) {
+        fs.unlinkSync(variablesPath);
+      }
     });
 
     it('should process stylesheets', function () {
@@ -105,6 +107,13 @@ describe('Engines', function () {
 
       var asset = env.findAsset('sass_engine/grid');
       assert(asset.toString().match(/\.column\{width:40px/));
+    });
+
+    it('should work with macros', function () {
+      var asset = env.findAsset('sass_engine/with_macros');
+
+      assert(asset.toString().match(/min-width:\s*4px/));
+      assert(asset.toString().match(/max-width:\s*16px/));
     });
   });
 });
