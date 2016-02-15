@@ -17,7 +17,7 @@ describe('Examples', function () {
     // Turn on compression modules for CSS & JS
     var env = _.assign({}, process.env, { NODE_ENV: 'production' });
 
-    srv = child.spawn(path.join(__dirname, '../examples/server.js'), [], { env: env });
+    srv = child.spawn('node', [ path.join(__dirname, '../examples/server.js') ], { env: env });
 
     setTimeout(done, 1000);
   });
@@ -32,7 +32,7 @@ describe('Examples', function () {
 
 
   it('Manifest run', function (done) {
-    child.exec(path.join(__dirname, '../examples/manifest.js'), function (err) {
+    child.exec('node ' + path.join(__dirname, '../examples/manifest.js'), function (err) {
       if (err) {
         done(err);
         return;
