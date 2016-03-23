@@ -1,4 +1,4 @@
-1.4.1 / 2015-01-21
+1.4.1 / 2016-01-21
 ------------------
 
 - Fixed sourcemaps for autoprefixer/csswring (when both enabled), #214.
