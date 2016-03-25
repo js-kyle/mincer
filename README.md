@@ -21,7 +21,7 @@ for more details.
 Supported engines are described in [Wiki](https://github.com/nodeca/mincer/wiki).
 If you wish to add new engine support - read
 [tutorial](https://github.com/nodeca/mincer/wiki/How-to-create-addon). Also
-you can [search existing extentions](https://www.npmjs.org/browse/keyword/mincer-contrib)
+you can [search existing extensions](https://www.npmjs.org/browse/keyword/mincer-contrib)
 in npm.
 
 
@@ -330,7 +330,7 @@ additional extention and does not break language syntax. When enabled, any
 `'$$ expression $$'` or `"$$ expression $$"` pattern will be replaced with
 evaluated expression value. In expression you can write JS code and use
 registered helpers. Macros are off by default. You should enable those for
-particular extentions:
+particular extensions:
 
 ```javascript
 Mincer.MacroProcessor.configure(['.js', '.css']);
