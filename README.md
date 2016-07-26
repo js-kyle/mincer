@@ -29,7 +29,7 @@ in npm.
 
 If your project is using `autoprefixer` or `csswring` processors:
 
-- upgrade `csswring` & `autoprefixer` to latest
+- upgrade `csswring` to >=4.x and `autoprefixer` to >= 6.x
   - if you used legacy `autoprefixer-core` package, replace it with `autoprefixer`
 - include `postcss` >= 4.1
 
