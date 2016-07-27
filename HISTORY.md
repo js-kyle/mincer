@@ -1,3 +1,10 @@
+1.4.2 / 2016-07-27
+------------------
+
+- Added option `noSourceMapProtection` to skip insert XSSI protection
+  sequence into generated sourcemaps.
+
+
 1.4.1 / 2016-01-21
 ------------------
 
