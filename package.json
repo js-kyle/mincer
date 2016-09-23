@@ -46,6 +46,7 @@
     "mocha": "*",
     "node-sass": "*",
     "postcss": "*",
+    "pug": "^2.0.0-beta6",
     "sinon": "^1.12.2",
     "stylus": "*",
     "supertest": "^1.1.0",
