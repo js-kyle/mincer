@@ -59,6 +59,17 @@ describe('Engines', function () {
         assert(asset.toString().match(/included/));
       });
     });
+
+    describe('with PUG backend', function () {
+      it('should compile to a JS function', function () {
+        var asset = env.findAsset('jst_engine/pug/template');
+        assert(asset.toString().match(/this\.JST/));
+        assert(asset.toString().match(/var pug_html = ""/));
+        assert(asset.toString().match(/pug_html = pug_html +/));
+        assert(asset.toString().match(/template/));
+        assert(asset.toString().match(/included/));
+      });
+    });
   });
 
   describe('LESS', function () {
