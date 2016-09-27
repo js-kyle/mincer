@@ -1,3 +1,10 @@
+1.5.0 / 2016-07-27
+------------------
+
+- Added PUG engine support, thanks to @scottty881.
+- Fixed CSSO 2.+ support, #229.
+
+
 1.4.2 / 2016-07-27
 ------------------
 
