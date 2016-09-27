@@ -1,5 +1,3 @@
-PATH        := ./node_modules/.bin:${PATH}
-
 NPM_PACKAGE := $(shell node -e 'process.stdout.write(require("./package.json").name)')
 NPM_VERSION := $(shell node -e 'process.stdout.write(require("./package.json").version)')
 
@@ -23,12 +21,12 @@ help:
 
 
 lint:
-	eslint --reset ./
+	./node_modules/.bin/eslint ./
 
 
 test: lint
 	rm -rf ./test/assets/
-	NODE_ENV=test mocha
+	NODE_ENV=test ./node_modules/.bin/mocha
 
 
 doc:
@@ -38,7 +36,7 @@ doc:
 		exit 128 ; \
 		fi
 	rm -rf ./doc
-	ndoc --link-format "{package.homepage}/blob/${CURR_HEAD}/{file}#L{line}"
+	./node_modules/.bin/ndoc --link-format "{package.homepage}/blob/${CURR_HEAD}/{file}#L{line}"
 
 
 gh-pages:

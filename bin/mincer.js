@@ -54,7 +54,7 @@ cli.addArgument([ 'filenames' ], {
 ////////////////////////////////////////////////////////////////////////////////
 
 
-if (-1 === process.argv.indexOf('--noenv')) {
+if (process.argv.indexOf('--noenv') === -1) {
   if (fs.existsSync('.mincerrc')) {
     var rcflags = fs.readFileSync('.mincerrc', 'utf8').replace(/^#.*/gm, '');
     [].splice.apply(process.argv, [ 2, 0 ].concat(shellwords(rcflags)));

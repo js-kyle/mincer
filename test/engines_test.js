@@ -83,7 +83,7 @@ describe('Engines', function () {
   describe('SASS', function () {
     var variablesPath = assetPath('sass_engine/_variables.css.scss');
 
-    after(function() {
+    after(function () {
       if (fs.existsSync(variablesPath)) {
         fs.unlinkSync(variablesPath);
       }
