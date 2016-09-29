@@ -21,7 +21,7 @@ help:
 
 
 lint:
-	./node_modules/.bin/eslint ./
+	./node_modules/.bin/eslint .
 
 
 test: lint
@@ -31,7 +31,7 @@ test: lint
 
 doc:
 	rm -rf ./doc
-	./node_modules/.bin/ndoc --link-format "{package.homepage}/blob/${CURR_HEAD}/{file}#L{line}"
+	./node_modules/.bin/ndoc --link-format "https://github.com/{package.repository}/blob/${CURR_HEAD}/{file}#L{line}"
 
 
 gh-pages:
