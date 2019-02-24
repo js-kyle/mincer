@@ -33,6 +33,8 @@ If your project is using `autoprefixer` or `csswring` processors:
   - if you used legacy `autoprefixer-core` package, replace it with `autoprefixer`
 - include `postcss` >= 4.1
 
+## Notice on upgrade to >=2.0.0
+- Node.js 6 or greater is required
 
 ## Installation
 
