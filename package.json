@@ -36,7 +36,7 @@
     "coffee-script": "*",
     "connect": "*",
     "csso": "*",
-    "csswring": "*",
+    "csswring": "6.0.3",
     "ejs": "*",
     "eslint": "3.6.1",
     "jade": "*",
