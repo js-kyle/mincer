@@ -49,6 +49,6 @@
     "sinon": "^1.12.2",
     "stylus": "*",
     "supertest": "^2.0.0",
-    "uglify-js": "^2.0.0"
+    "uglify-js": "*"
   }
 }
