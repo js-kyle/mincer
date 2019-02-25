@@ -36,7 +36,7 @@
     "coffee-script": "*",
     "connect": "*",
     "csso": "*",
-    "csswring": "*",
+    "csswring": "6.0.3",
     "ejs": "*",
     "eslint": "3.6.1",
     "jade": "*",
@@ -49,6 +49,6 @@
     "sinon": "^1.12.2",
     "stylus": "*",
     "supertest": "^2.0.0",
-    "uglify-js": "*"
+    "uglify-js": "^2.0.0"
   }
 }
