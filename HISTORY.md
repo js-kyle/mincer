@@ -1,3 +1,12 @@
+2.0.0 / 2019-02-25
+------------------
+
+- Maintenance release.
+- Drop node v4 support (test v6 & latest).
+- Deps: Bump lodash 3 -> 4.
+- DevDeps: freeze versions of CSSWring & uglify-js.
+
+
 1.5.0 / 2016-07-27
 ------------------
 
