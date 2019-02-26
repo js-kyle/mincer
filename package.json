@@ -42,6 +42,7 @@
     "jade": "*",
     "less": "*",
     "mocha": "3.1.0",
+    "ndoc": "^5.0.1",
     "node-sass": "*",
     "postcss": "*",
     "pug": "^2.0.0-beta6",
