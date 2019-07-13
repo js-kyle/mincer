@@ -4,6 +4,8 @@ Mincer - assets processor
 [![Build Status](https://travis-ci.org/nodeca/mincer.svg?branch=master)](https://travis-ci.org/nodeca/mincer)
 [![NPM version](https://img.shields.io/npm/v/mincer.svg)](https://www.npmjs.org/package/mincer)
 
+**WARNING! This project is not actively maintained and not recommended for use.**
+
 JavaScript port of Sprockets (v2.10.0). It features same declarative dependency
 management (with exactly same language) for CSS and JavaScript and preprocessor
 pipeline. Mincer allows you to write assets in the languages like: CoffeeScript,
