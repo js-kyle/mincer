@@ -38,17 +38,17 @@
     "csso": "*",
     "csswring": "6.0.3",
     "ejs": "*",
-    "eslint": "3.6.1",
+    "eslint": "6.0.1",
     "jade": "*",
     "less": "*",
-    "mocha": "3.1.0",
+    "mocha": "6.1.4",
     "ndoc": "^5.0.1",
     "node-sass": "*",
     "postcss": "*",
     "pug": "^2.0.0-beta6",
     "sinon": "^1.12.2",
     "stylus": "*",
-    "supertest": "^2.0.0",
+    "supertest": "^4.0.2",
     "uglify-js": "^2.0.0"
   }
 }
