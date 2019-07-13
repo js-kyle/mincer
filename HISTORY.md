@@ -1,3 +1,12 @@
+2.0.1 / 2019-07-13
+------------------
+
+- Maintenance release.
+- Deps bump.
+- Travis: update minimal node version to 8.
+- Added maintenance warning to readme.
+
+
 2.0.0 / 2019-02-25
 ------------------
 
