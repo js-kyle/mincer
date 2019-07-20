@@ -13,7 +13,7 @@
   ],
   "author": "Aleksey V Zapparov <ixti@member.fsf.org> (http://ixti.net/)",
   "license": "MIT",
-  "repository": "nodeca/mincer",
+  "repository": "js-kyle/mincer",
   "bin": {
     "mincer": "bin/mincer.js"
   },

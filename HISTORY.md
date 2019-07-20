@@ -1,3 +1,7 @@
+2019-07-20
+------------------
+- Maintenance owner moved from nodeca to js-kyle
+
 2.0.1 / 2019-07-13
 ------------------
 
