@@ -7,7 +7,7 @@ REMOTE_NAME ?= origin
 REMOTE_REPO ?= $(shell git config --get remote.${REMOTE_NAME}.url)
 
 CURR_HEAD   := $(firstword $(shell git show-ref --hash HEAD | sed 's/^\(.\{6\}\).*$$/\1/') master)
-GITHUB_PROJ := nodeca/${NPM_PACKAGE}
+GITHUB_PROJ := js-kyle/${NPM_PACKAGE}
 
 
 help:
