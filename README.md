@@ -1,10 +1,10 @@
 Mincer - assets processor
 =========================
 
-[![Build Status](https://travis-ci.org/nodeca/mincer.svg?branch=master)](https://travis-ci.org/nodeca/mincer)
+[![Build Status](https://travis-ci.org/js-kyle/mincer.svg?branch=master)](https://travis-ci.org/js-kyle/mincer)
 [![NPM version](https://img.shields.io/npm/v/mincer.svg)](https://www.npmjs.org/package/mincer)
 
-**WARNING! This project is not actively maintained and not recommended for use.**
+**NOTE: This project is now under limited maintenance.**
 
 JavaScript port of Sprockets (v2.10.0). It features same declarative dependency
 management (with exactly same language) for CSS and JavaScript and preprocessor
@@ -16,13 +16,13 @@ available in sprockets:
 - macros support (nice alternative to EJS)
 
 See [Sprockets](https://github.com/sstephenson/sprockets),
-[Mincer API Documentation](http://nodeca.github.io/mincer/) and
-[Mincer examples](https://github.com/nodeca/mincer/tree/master/examples)
+[Mincer API Documentation](http://js-kyle.github.io/mincer/) and
+[Mincer examples](https://github.com/js-kyle/mincer/tree/master/examples)
 for more details.
 
-Supported engines are described in [Wiki](https://github.com/nodeca/mincer/wiki).
+Supported engines are described in [Wiki](https://github.com/js-kyle/mincer/wiki).
 If you wish to add new engine support - read
-[tutorial](https://github.com/nodeca/mincer/wiki/How-to-create-addon). Also
+[tutorial](https://github.com/js-kyle/mincer/wiki/How-to-create-addon). Also
 you can [search existing extensions](https://www.npmjs.org/browse/keyword/mincer-contrib)
 in npm.
 
@@ -473,4 +473,4 @@ Copyright (c) 2012 [Vitaly Puzrin](https://github.com/puzrin)
 
 Released under the MIT license. See [LICENSE][license] for details.
 
-[license]:  https://raw.github.com/nodeca/mincer/master/LICENSE
+[license]:  https://raw.github.com/js-kyle/mincer/master/LICENSE
