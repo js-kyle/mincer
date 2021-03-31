@@ -1,3 +1,8 @@
+2021-03-21
+------------------
+- Travis: update node version to 10
+- bump lodash
+
 2019-07-20
 ------------------
 - Maintenance owner moved from nodeca to js-kyle
