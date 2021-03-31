@@ -46,7 +46,7 @@ describe('Engines', function () {
       it('should compile to a JS function', function () {
         var asset = env.findAsset('jst_engine/ejs/template');
         assert(asset.toString().match(/this\.JST/));
-        assert(asset.toString().match(/__output\.push/));
+        assert(asset.toString().match(/__output \+= s/));
       });
     });
 
